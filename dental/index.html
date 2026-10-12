@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightSmile Dental | Gentle Family Dentistry</title>
+<meta name="description" content="BrightSmile Dental: gentle, modern dental care for the whole family. Book your appointment online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0e7c9b;--blue-d:#0a627c;--soft:#eaf6fa;--text:#17323d;--muted:#5b7280;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;color:var(--text);line-height:1.65;background:#fff}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--text);color:#fff;text-align:center;font-size:.78rem;padding:6px}
+header{position:sticky;top:0;background:#fff;z-index:10;box-shadow:0 1px 0 #e3eef2}
+nav{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font-weight:700;font-size:1.25rem;color:var(--blue)}
+.links{display:flex;gap:26px;align-items:center;font-size:.93rem;color:var(--muted)}
+.links a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:#fff!important;padding:12px 26px;border-radius:10px;font-weight:600;border:0;cursor:pointer;font:600 1rem Poppins;transition:background .2s}
+.btn:hover{background:var(--blue-d)}
+.btn.ghost{background:#fff;color:var(--blue)!important;border:2px solid var(--blue)}
+.burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--text)}
+.hero{background:linear-gradient(135deg,var(--soft),#fff 70%);padding:90px 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.pill{display:inline-block;background:#d3edf5;color:var(--blue-d);padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:18px}
+h1 em{font-style:normal;color:var(--blue)}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:480px;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.visual{aspect-ratio:1;width:100%;max-width:380px;margin:auto;border-radius:50%;background:radial-gradient(circle at 30% 30%,#7fd0e6,var(--blue));display:grid;place-items:center;font-size:7rem;box-shadow:0 30px 60px -20px rgba(14,124,155,.5)}
+section{padding:80px 0}
+.title{text-align:center;margin-bottom:46px}
+.title h2{font-size:2rem}
+.title p{color:var(--muted);margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{border:1px solid #dcebf0;border-radius:16px;padding:28px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(14,124,155,.35)}
+.card .ic{width:50px;height:50px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.5rem;margin-bottom:14px}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.93rem}
+.why{background:var(--soft)}
+.why ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.why li{background:#fff;border-radius:14px;padding:20px 22px;display:flex;gap:12px}
+.why li b{color:var(--blue)}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+form{display:grid;gap:14px;background:var(--soft);padding:28px;border-radius:18px}
+label{font-size:.82rem;color:var(--muted);font-weight:500}
+input,select{width:100%;margin-top:4px;padding:12px 14px;border:1px solid #c9e1ea;border-radius:10px;font:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid var(--blue);border-color:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#msg{display:none;padding:14px;border-radius:10px;font-size:.92rem}
+.ok{background:#dcf5e5;color:#1d6b3a}.bad{background:#fde3e3;color:#9b2c2c}
+details{border-bottom:1px solid #dcebf0;padding:16px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:'+';color:var(--blue);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:'−'}
+details p{color:var(--muted);margin-top:10px;font-size:.95rem}
+footer{background:var(--text);color:#a9c0ca;text-align:center;padding:30px 0;font-size:.85rem}
+@media(max-width:780px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:16px;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+ .links.open{display:flex}
+ .hero{padding:56px 0}.hero .wrap,.book{grid-template-columns:1fr}
+ .visual{max-width:220px;font-size:4.5rem;order:-1}
+ section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional business created as a design sample</div>
+<header>
+ <div class="wrap"><nav>
+  <a class="logo" href="#top">😁 BrightSmile</a>
+  <button class="burger" id="burger" aria-label="Open menu">☰</button>
+  <div class="links" id="links">
+   <a href="#services">Services</a><a href="#why">Why Us</a><a href="#faq">FAQ</a>
+   <a class="btn" href="#book">Book Now</a>
+  </div>
+ </nav></div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="pill">Now accepting new patients</span>
+   <h1>Gentle dental care for <em>every smile</em></h1>
+   <p>Modern, pain-free dentistry for the whole family in a calm, friendly space. Same-week appointments available.</p>
+   <div class="cta"><a class="btn" href="#book">Book an Appointment</a><a class="btn ghost" href="#services">Our Services</a></div>
+  </div>
+  <div class="visual" aria-hidden="true">🦷</div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="title"><h2>Our Services</h2><p>Everything your family needs under one roof.</p></div>
+  <div class="cards">
+   <div class="card"><div class="ic">🪥</div><h3>Check-ups & Cleaning</h3><p>Regular exams and professional cleanings to keep problems away.</p></div>
+   <div class="card"><div class="ic">✨</div><h3>Teeth Whitening</h3><p>Safe, fast whitening for a visibly brighter smile.</p></div>
+   <div class="card"><div class="ic">🧒</div><h3>Kids' Dentistry</h3><p>Fun, gentle visits that build good habits early.</p></div>
+   <div class="card"><div class="ic">🔧</div><h3>Fillings & Crowns</h3><p>Natural-looking restorations that last.</p></div>
+   <div class="card"><div class="ic">😬</div><h3>Braces & Aligners</h3><p>Straighter teeth with modern, discreet options.</p></div>
+   <div class="card"><div class="ic">🚑</div><h3>Emergency Care</h3><p>Toothache? Call us, we'll see you the same day.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="why" class="why">
+ <div class="wrap">
+  <div class="title"><h2>Why families choose us</h2></div>
+  <ul>
+   <li><span>✅</span><div><b>Pain-free approach</b><br>Gentle techniques and comfort options for anxious patients.</div></li>
+   <li><span>✅</span><div><b>Clear pricing</b><br>You'll know the cost before any treatment starts.</div></li>
+   <li><span>✅</span><div><b>Flexible hours</b><br>Evening and Saturday appointments.</div></li>
+   <li><span>✅</span><div><b>Insurance friendly</b><br>We work with most major plans.</div></li>
+  </ul>
+ </div>
+</section>
+
+<section id="book">
+ <div class="wrap book">
+  <div>
+   <h2 style="font-size:2rem;margin-bottom:10px">Book your visit</h2>
+   <p style="color:var(--muted);margin-bottom:26px">Pick a day and service and we'll confirm by phone or email within 24 hours.</p>
+   <p><b>📍</b> 450 Cedar Avenue, Suite 2<br><b>📞</b> (555) 019-7731<br><b>🕘</b> Mon–Fri 8–6 · Sat 9–2</p>
+  </div>
+  <form id="form" novalidate>
+   <label>Full name<input id="name" placeholder="Jane Smith"></label>
+   <label>Email<input id="email" type="email" placeholder="jane@email.com"></label>
+   <div class="two">
+    <label>Service<select id="service"><option>Check-up & Cleaning</option><option>Teeth Whitening</option><option>Kids' Dentistry</option><option>Fillings & Crowns</option><option>Braces & Aligners</option><option>Emergency</option></select></label>
+    <label>Preferred date<input id="date" type="date"></label>
+   </div>
+   <button class="btn" type="submit">Request Appointment</button>
+   <div id="msg" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section id="faq" style="background:var(--soft)">
+ <div class="wrap" style="max-width:760px">
+  <div class="title"><h2>Common questions</h2></div>
+  <details><summary>How often should I visit the dentist?</summary><p>Most people benefit from a check-up and cleaning every six months. We'll recommend a schedule that fits you.</p></details>
+  <details><summary>Do you accept insurance?</summary><p>Yes, we work with most major insurance plans and can check your coverage before your visit.</p></details>
+  <details><summary>I'm nervous about the dentist. Can you help?</summary><p>Absolutely. We take time to explain every step and offer comfort options so you feel at ease.</p></details>
+  <details><summary>Do you see children?</summary><p>Yes. We welcome patients of all ages, from a child's first visit onward.</p></details>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 BrightSmile Dental · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#e3a63e;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const links=document.getElementById('links');
+document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+links.addEventListener('click',e=>{if(e.target.tagName==='A')links.classList.remove('open')});
+const date=document.getElementById('date');
+date.min=new Date().toISOString().split('T')[0];
+document.getElementById('form').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=document.getElementById('name').value.trim(),em=document.getElementById('email').value.trim(),d=date.value,m=document.getElementById('msg');
+ m.style.display='block';
+ if(!n||!/^\S+@\S+\.\S+$/.test(em)||!d){m.className='bad';m.textContent='Please enter your name, a valid email and a date.';return}
+ m.className='ok';
+ m.textContent=`Thanks, ${n}! We got your request for ${document.getElementById('service').value} on ${d}. We'll email you at ${em} to confirm.`;
+ e.target.reset();
+});
+</script>
+</body>
+</html>

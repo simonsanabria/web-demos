@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fogón Guaraní | Parrilla y cocina paraguaya en Asunción</title>
+<meta name="description" content="Fogón Guaraní: parrilla y cocina paraguaya en Asunción. Mire el menú, arme su pedido y envíelo por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121a15;--card:#1a251e;--text:#f4efe6;--muted:#aab5ab;--accent:#e0683c;--accent-d:#c85528;--line:#26352b;--wa:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:#fff;text-align:center;font-size:.8rem;padding:6px;font-weight:600}
+header{position:sticky;top:0;z-index:10;background:rgba(18,26,21,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:Fraunces,serif;font-size:1.3rem;font-weight:700}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 26px;border-radius:999px;font-weight:600;border:0;cursor:pointer;font-size:1rem;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.wa{background:var(--wa);color:#08331a!important}
+.btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)!important}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+.hero{padding:105px 0 95px;background:radial-gradient(circle at 78% 18%,rgba(224,104,60,.25),transparent 55%),linear-gradient(180deg,#16211a,#121a15)}
+.hero .tag{color:var(--accent);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);max-width:740px;margin-bottom:18px}
+.hero .sub{color:var(--muted);max-width:520px;font-size:1.1rem;margin-bottom:30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:76px 0}
+.title{text-align:center;margin-bottom:40px}
+.title h2{font-size:2.2rem}
+.title p{color:var(--muted);margin-top:8px}
+.tabs{display:flex;gap:10px;justify-content:center;margin-bottom:28px;flex-wrap:wrap}
+.tabs button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:9px 20px;border-radius:999px;cursor:pointer;font:inherit;font-size:.95rem}
+.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.order{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;align-items:start}
+.menu{display:grid;gap:12px}
+.item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.item h3{font-size:1.1rem}
+.item p{color:var(--muted);font-size:.88rem}
+.item .price{color:var(--accent);font-weight:600;font-size:.95rem;margin-top:2px}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:34px;height:34px;border-radius:50%;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:1.2rem;cursor:pointer;line-height:1}
+.qty button:hover{background:var(--accent);color:#fff}
+.qty b{min-width:18px;text-align:center}
+.cart{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;position:sticky;top:86px}
+.cart h3{font-size:1.3rem;margin-bottom:12px}
+.cart ul{list-style:none;display:grid;gap:8px;margin-bottom:14px;max-height:260px;overflow:auto}
+.cart li{display:flex;justify-content:space-between;gap:10px;font-size:.92rem;color:var(--muted)}
+.cart li b{color:var(--text);font-weight:500}
+.cart .empty{color:var(--muted);font-size:.9rem}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:12px;margin-bottom:14px}
+.total b{font-family:Fraunces,serif;font-size:1.5rem;color:var(--accent)}
+.cart label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:10px}
+input,select,textarea{width:100%;padding:11px 13px;margin-top:4px;background:#0e1510;border:1px solid #33463a;border-radius:10px;color:var(--text);font:inherit}
+textarea{min-height:76px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.preview{display:none;margin-top:14px;background:#0e1510;border:1px dashed #3d5a46;border-radius:10px;padding:12px;font-size:.82rem;color:#cfe3d4;white-space:pre-wrap}
+.note{color:var(--muted);font-size:.78rem;margin-top:10px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.pic{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(135deg,#e0683c,#7a2f12 60%,#2a1209);display:grid;place-items:center;font-size:4.5rem}
+.about p{color:var(--muted);margin-top:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.book{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+form{display:grid;gap:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+.hours li{list-style:none;display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.hours li b{color:var(--text);font-weight:500}
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:820px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:66px;left:0;right:0;background:#121a15;flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .order,.about,.grid2{grid-template-columns:1fr}
+ .cart{position:static}
+ .hero{padding:66px 0}
+ section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Proyecto de demostración: negocio ficticio creado como muestra de diseño</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Fogón <span>Guaraní</span></a>
+   <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+   <div class="links" id="links">
+    <a href="#pedido">Menú y pedidos</a><a href="#nosotros">Nosotros</a><a href="#reserva">Reservas</a>
+    <a class="btn" href="#pedido">Hacer pedido</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Parrilla y cocina paraguaya · Asunción</p>
+  <h1>El sabor de casa, al fuego y a su mesa.</h1>
+  <p class="sub">Asado, chipa y platos tradicionales preparados cada día. Arme su pedido en línea y envíelo por WhatsApp en un minuto.</p>
+  <div class="cta"><a class="btn" href="#pedido">Ver menú y pedir</a><a class="btn ghost" href="#reserva">Reservar mesa</a></div>
+ </div>
+</section>
+
+<section id="pedido">
+ <div class="wrap">
+  <div class="title"><h2>Menú y pedidos</h2><p>Precios en guaraníes. Sume sus platos y envíe el pedido por WhatsApp.</p></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="order">
+   <div class="menu" id="menu"></div>
+   <aside class="cart">
+    <h3>Su pedido</h3>
+    <ul id="lines"></ul>
+    <div class="total"><span>Total</span><b id="total">Gs. 0</b></div>
+    <label>Nombre <input type="text" id="oname" autocomplete="name"></label>
+    <label>Tipo de pedido
+     <select id="omode"><option>Retiro en el local</option><option>Delivery</option></select>
+    </label>
+    <label>Comentarios <textarea id="onote" placeholder="Sin cebolla, punto de la carne, etc."></textarea></label>
+    <button class="btn wa" id="send" style="width:100%" disabled>Enviar pedido por WhatsApp</button>
+    <div class="preview" id="preview"></div>
+    <p class="note">Demostración: no se envía nada. En un sitio real, este botón abre WhatsApp con el pedido ya escrito.</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section id="nosotros" style="background:#0f1612">
+ <div class="wrap about">
+  <div class="pic">🔥</div>
+  <div>
+   <h2>Cocina de fogón, sin apuros</h2>
+   <p>Cocinamos con carbón y leña, como en casa. Cada mañana preparamos la chipa y la sopa paraguaya, y la carne llega fresca todos los días.</p>
+   <p>Atendemos almuerzos, cenas y eventos familiares. Pregunte por nuestros combos para grupos.</p>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="reserva">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Reserve su mesa</h2><p>Le confirmamos por WhatsApp.</p></div>
+   <form id="form" novalidate>
+    <div class="two">
+     <label>Nombre <input type="text" id="rname" autocomplete="name"></label>
+     <label>Teléfono <input type="tel" id="rphone" autocomplete="tel"></label>
+    </div>
+    <div class="two">
+     <label>Fecha <input type="date" id="rdate"></label>
+     <label>Hora <select id="rtime"></select></label>
+    </div>
+    <label>Personas <select id="rpeople"></select></label>
+    <button class="btn" type="submit">Solicitar reserva</button>
+    <div id="msg" role="status" style="display:none;padding:14px;border-radius:10px"></div>
+   </form>
+  </div>
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:14px"><h2>Horarios</h2></div>
+   <ul class="hours">
+    <li><span>Lunes a viernes</span><b>11:30 – 15:00 · 19:00 – 23:30</b></li>
+    <li><span>Sábados</span><b>11:30 – 00:00</b></li>
+    <li><span>Domingos</span><b>11:30 – 16:00</b></li>
+   </ul>
+   <p style="color:var(--muted);margin-top:18px"><b style="color:var(--text)">Dirección de ejemplo</b> · Asunción, Paraguay<br><b style="color:var(--text)">WhatsApp</b> · +595 000 000 000 (ejemplo)</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Fogón Guaraní · Sitio de demostración · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Desarrollado por snbr.dev<span style="color:#e3a63e;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const MENU={
+ "Entradas":[["Chipa guasu","Choclo, queso y cebolla, horneada al momento.",25000],["Sopa paraguaya","La clásica, tierna y con queso.",22000],["Mbejú","Con queso, calentito.",20000],["Empanada de carne","Unidad. Carne y huevo.",8000]],
+ "Parrilla":[["Asado de tira","Para una persona, con mandioca.",95000],["Pollo a la parrilla","Con mandioca y ensalada.",58000],["Milanesa napolitana","Con papas fritas.",65000],["Locro","Típico, con maíz y carne.",45000]],
+ "Postres":[["Dulce de mamón con queso","Postre tradicional.",22000],["Flan casero","Con dulce de leche.",18000]],
+ "Bebidas":[["Tereré (jarra)","Con yuyos y hielo.",15000],["Jugo natural","Naranja, limón o mango.",14000],["Cerveza","Botella.",18000],["Agua","Con o sin gas.",8000]]
+};
+const cats=Object.keys(MENU);let cat=cats[0];const qty={};
+const gs=n=>'Gs. '+n.toLocaleString('es-PY');
+function renderTabs(){$('tabs').innerHTML=cats.map(c=>`<button class="${c===cat?'on':''}" data-c="${c}">${c}</button>`).join('')}
+function renderMenu(){
+ $('menu').innerHTML=MENU[cat].map(([n,d,p])=>`<div class="item"><div><h3>${n}</h3><p>${d}</p><div class="price">${gs(p)}</div></div><div class="qty"><button data-n="${n}" data-d="-1" aria-label="Quitar ${n}">−</button><b>${qty[n]||0}</b><button data-n="${n}" data-d="1" aria-label="Agregar ${n}">+</button></div></div>`).join('');
+}
+const PRICE={};cats.forEach(c=>MENU[c].forEach(([n,d,p])=>PRICE[n]=p));
+function cart(){
+ const rows=Object.keys(qty).filter(n=>qty[n]>0);
+ $('lines').innerHTML=rows.length?rows.map(n=>`<li><span>${qty[n]} × <b>${n}</b></span><span>${gs(qty[n]*PRICE[n])}</span></li>`).join(''):'<li class="empty">Aún no agregó platos.</li>';
+ const total=rows.reduce((s,n)=>s+qty[n]*PRICE[n],0);
+ $('total').textContent=gs(total);$('send').disabled=!rows.length;
+ return {rows,total};
+}
+$('tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b){cat=b.dataset.c;renderTabs();renderMenu()}});
+$('menu').addEventListener('click',e=>{const b=e.target.closest('button[data-n]');if(!b)return;const n=b.dataset.n;qty[n]=Math.max(0,(qty[n]||0)+(+b.dataset.d));renderMenu();cart()});
+$('send').addEventListener('click',()=>{
+ const {rows,total}=cart();if(!rows.length)return;
+ const nm=$('oname').value.trim()||'(sin nombre)';
+ const msg=['Hola, quiero hacer un pedido:',...rows.map(n=>`• ${qty[n]} × ${n} — ${gs(qty[n]*PRICE[n])}`),`Total: ${gs(total)}`,`Tipo: ${$('omode').value}`,`Nombre: ${nm}`].concat($('onote').value.trim()?[`Comentarios: ${$('onote').value.trim()}`]:[]).join('\n');
+ $('preview').style.display='block';$('preview').textContent=msg;
+});
+for(let h=11;h<=23;h++){['00','30'].forEach(m=>{if(h===11&&m==='00')return;$('rtime').insertAdjacentHTML('beforeend',`<option>${String(h).padStart(2,'0')}:${m}</option>`)})}
+for(let i=1;i<=12;i++)$('rpeople').insertAdjacentHTML('beforeend',`<option>${i} ${i===1?'persona':'personas'}</option>`);
+const d=new Date();$('rdate').min=new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open')});
+$('form').addEventListener('submit',e=>{
+ e.preventDefault();const m=$('msg');m.style.display='block';
+ const nm=$('rname').value.trim(),ph=$('rphone').value.trim(),dt=$('rdate').value;
+ if(!nm||!ph||!dt){m.style.background='#33191a';m.style.color='#f3bcbc';m.textContent='Complete su nombre, teléfono y la fecha.';return}
+ m.style.background='#17321f';m.style.color='#bff2cf';
+ m.textContent=`Gracias, ${nm}. Esto es una demostración: no se envió nada. En un sitio real recibiríamos su solicitud al instante.`;
+ e.target.reset();
+});
+renderTabs();renderMenu();cart();
+</script>
+</body>
+</html>

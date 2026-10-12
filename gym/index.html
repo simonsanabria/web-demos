@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge Fitness | Strength, HIIT & Boxing Gym in Miami</title>
+<meta name="description" content="Forge Fitness: strength training, HIIT and boxing classes in Miami. See memberships, reserve your class and claim a free 3-day pass.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0d;--card:#161618;--text:#f4f2ef;--muted:#a0a0a6;--accent:#ff4d2e;--accent-d:#e03a1d;--line:#26262a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;line-height:1.05;font-weight:400}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:#fff;text-align:center;font-size:.8rem;padding:6px;font-weight:600}
+header{position:sticky;top:0;z-index:10;background:rgba(12,12,13,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.08em}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 26px;border-radius:4px;font-weight:700;border:0;cursor:pointer;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)!important}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+.hero{padding:125px 0 110px;background:radial-gradient(circle at 80% 12%,rgba(255,77,46,.28),transparent 55%),linear-gradient(180deg,#131315,#0c0c0d)}
+.hero .tag{color:var(--accent);text-transform:uppercase;letter-spacing:.25em;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(3.2rem,10vw,6.2rem);max-width:780px;margin-bottom:18px}
+.hero .sub{color:var(--muted);max-width:520px;font-size:1.1rem;margin-bottom:32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.statbar{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+.statbar .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;text-align:center}
+.statbar b{display:block;font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--accent);font-weight:400}
+.statbar span{color:var(--muted);font-size:.85rem}
+section{padding:78px 0}
+.title{text-align:center;margin-bottom:44px}
+.title h2{font-size:2.8rem}
+.title p{color:var(--muted);margin-top:8px}
+.switch{display:flex;gap:10px;justify-content:center;margin-bottom:30px}
+.switch button,.chips button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:9px 22px;border-radius:999px;cursor:pointer;font:inherit;font-size:.95rem}
+.switch button.on,.chips button.on{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.plan.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.badge{align-self:flex-start;background:var(--accent);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.plan h3{font-size:1.8rem}
+.plan .price{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent);line-height:1}
+.plan .price small{font-family:Inter,sans-serif;font-size:.9rem;color:var(--muted)}
+.plan .save{color:var(--muted);font-size:.85rem;min-height:1.3em}
+.plan ul{list-style:none;color:var(--muted);font-size:.92rem;display:grid;gap:6px;margin:6px 0 12px}
+.plan li::before{content:"✓ ";color:var(--accent)}
+.plan .btn{margin-top:auto;text-align:center}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+.sched{max-width:760px;margin:0 auto;display:grid;gap:10px;margin-top:18px}
+.cls{display:grid;grid-template-columns:90px 1fr auto;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.cls .time{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--accent)}
+.cls h3{font-size:1.3rem}
+.cls p{color:var(--muted);font-size:.85rem}
+.cls button{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:8px 16px;border-radius:4px;cursor:pointer;font:inherit;font-weight:600;font-size:.85rem;white-space:nowrap}
+.cls button.on{background:var(--accent);color:#fff}
+.cls button:disabled{opacity:.45;cursor:not-allowed}
+.empty{text-align:center;color:var(--muted);padding:20px}
+.coaches{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.coach{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px;text-align:center}
+.avatar{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--accent),#5a1608);display:grid;place-items:center;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#fff}
+.coach h3{font-size:1.5rem}
+.coach p{color:var(--muted);font-size:.9rem}
+.trial{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+input,select{width:100%;padding:12px 14px;margin-top:4px;background:#0c0c0d;border:1px solid #34343a;border-radius:4px;color:var(--text);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+#msg{display:none;padding:14px;border-radius:4px}
+.hours li{list-style:none;display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.hours li b{color:var(--text);font-weight:500}
+.info{color:var(--muted);margin-top:18px}.info b{color:var(--text)}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:780px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:64px;left:0;right:0;background:#0c0c0d;flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .grid2{grid-template-columns:1fr}
+ .hero{padding:72px 0}
+ section{padding:54px 0}
+ .cls{grid-template-columns:70px 1fr}
+ .cls button{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional business created as a design sample</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">FORGE<span>.</span>FITNESS</a>
+   <button class="burger" id="burger" aria-label="Open menu">☰</button>
+   <div class="links" id="links">
+    <a href="#plans">Memberships</a><a href="#classes">Classes</a><a href="#coaches">Coaches</a>
+    <a class="btn" href="#trial">Free 3-Day Pass</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Strength · HIIT · Boxing · Miami</p>
+  <h1>Build the version of you that doesn't quit.</h1>
+  <p class="sub">Real coaching, serious equipment and classes that fit your day. Try us free for 3 days. No contract, no pressure.</p>
+  <div class="cta"><a class="btn" href="#trial">Claim Free Pass</a><a class="btn ghost" href="#plans">See Memberships</a></div>
+ </div>
+</section>
+
+<div class="statbar"><div class="wrap">
+ <div><b>24/7</b><span>Member access</span></div>
+ <div><b>40+</b><span>Weekly classes</span></div>
+ <div><b>12</b><span>Certified coaches</span></div>
+ <div><b>0</b><span>Sign-up fees</span></div>
+</div></div>
+
+<section id="plans">
+ <div class="wrap">
+  <div class="title"><h2>Memberships</h2><p>Pick what fits. Switch to yearly and get 2 months free.</p></div>
+  <div class="switch" id="billing"><button class="on" data-b="m">Monthly</button><button data-b="y">Yearly</button></div>
+  <div class="plans" id="planList"></div>
+ </div>
+</section>
+
+<section id="classes" style="background:#101012">
+ <div class="wrap">
+  <div class="title"><h2>Class Schedule</h2><p>Reserve your spot. Cancel anytime before class.</p></div>
+  <div class="chips" id="days"></div>
+  <div class="chips" id="types"></div>
+  <div class="sched" id="sched"></div>
+ </div>
+</section>
+
+<section id="coaches">
+ <div class="wrap">
+  <div class="title"><h2>Your Coaches</h2><p>Certified, experienced and here to push you.</p></div>
+  <div class="coaches">
+   <div class="coach"><div class="avatar">RV</div><h3>Rafael Vega</h3><p>Strength &amp; powerlifting</p></div>
+   <div class="coach"><div class="avatar">SA</div><h3>Sofia Alvarez</h3><p>HIIT &amp; conditioning</p></div>
+   <div class="coach"><div class="avatar">TM</div><h3>Tony Morales</h3><p>Boxing &amp; mobility</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="trial" id="trial">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Free 3-Day Pass</h2><p>Leave your details and we'll text you your pass.</p></div>
+   <form id="form" novalidate>
+    <label>Name <input type="text" id="tname" autocomplete="name"></label>
+    <div class="two" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+     <label>Phone <input type="tel" id="tphone" autocomplete="tel"></label>
+     <label>Email <input type="email" id="temail" autocomplete="email"></label>
+    </div>
+    <label>Main goal
+     <select id="goal"><option>Build muscle</option><option>Lose weight</option><option>Get stronger</option><option>Learn boxing</option><option>Just get moving</option></select>
+    </label>
+    <button class="btn" type="submit">Get My Free Pass</button>
+    <div id="msg" role="status"></div>
+   </form>
+  </div>
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:14px"><h2>Hours &amp; FAQ</h2></div>
+   <ul class="hours">
+    <li><span>Staffed hours Mon–Fri</span><b>5:00 AM – 10:00 PM</b></li>
+    <li><span>Saturday – Sunday</span><b>7:00 AM – 6:00 PM</b></li>
+    <li><span>Member access</span><b>24/7</b></li>
+   </ul>
+   <p class="info"><b>Demo address</b> · Miami, FL · <b>Phone</b> (305) 555-0166</p>
+   <details><summary>Is there a contract?</summary><p>No. Monthly plans can be cancelled anytime with 30 days notice.</p></details>
+   <details><summary>I'm a beginner. Is that okay?</summary><p>Absolutely. Every class has beginner options and our coaches will guide you.</p></details>
+   <details><summary>Can I bring a friend?</summary><p>Plus and Elite members get guest passes every month.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Forge Fitness · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#ff4d2e;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const money=n=>'$'+n.toLocaleString('en-US');
+const PLANS=[
+ {n:"Basic",m:29,f:["Gym floor access","Locker rooms","2 classes per month"]},
+ {n:"Plus",m:49,f:["24/7 access","Unlimited classes","1 guest pass per month"],best:true},
+ {n:"Elite",m:79,f:["Everything in Plus","2 personal training sessions","Body composition scans"]}
+];
+let yearly=false;
+function renderPlans(){
+ document.querySelectorAll('#billing button').forEach(b=>b.classList.toggle('on',(b.dataset.b==='y')===yearly));
+ $('planList').innerHTML=PLANS.map(p=>{
+  const price=yearly?p.m*10:p.m;
+  return `<div class="plan ${p.best?'best':''}">${p.best?'<span class="badge">Most popular</span>':''}<h3>${p.n}</h3><div class="price">${money(price)} <small>/ ${yearly?'year':'month'}</small></div><div class="save">${yearly?'2 months free · '+money(p.m*2)+' saved':''}</div><ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul><a class="btn" href="#trial">Start Free Trial</a></div>`}).join('');
+}
+$('billing').addEventListener('click',e=>{const b=e.target.closest('button');if(b){yearly=b.dataset.b==='y';renderPlans()}});
+
+const DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+const TYPES=["All","Strength","HIIT","Boxing","Mobility"];
+const CLASSES={
+ Mon:[["6:00 AM","Strength Foundations","Strength","Rafael",12],["12:15 PM","Lunch HIIT 45","HIIT","Sofia",16],["6:30 PM","Boxing Basics","Boxing","Tony",14]],
+ Tue:[["6:00 AM","Power Hour","Strength","Rafael",10],["7:00 AM","Mobility Reset","Mobility","Tony",18],["6:30 PM","Metcon HIIT","HIIT","Sofia",16]],
+ Wed:[["6:00 AM","Upper Body Strength","Strength","Rafael",12],["12:15 PM","Lunch Boxing","Boxing","Tony",14],["7:00 PM","Core & Conditioning","HIIT","Sofia",16]],
+ Thu:[["6:00 AM","Lower Body Strength","Strength","Rafael",12],["7:00 AM","Mobility Reset","Mobility","Tony",18],["6:30 PM","Boxing Fundamentals","Boxing","Tony",14]],
+ Fri:[["6:00 AM","Full Body HIIT","HIIT","Sofia",16],["12:15 PM","Strength Express","Strength","Rafael",12],["5:30 PM","Friday Burner","HIIT","Sofia",16]],
+ Sat:[["9:00 AM","Team Strength","Strength","Rafael",14],["10:30 AM","Boxing Sparring Prep","Boxing","Tony",14],["12:00 PM","Stretch & Recover","Mobility","Tony",18]],
+ Sun:[["10:00 AM","Sunday HIIT","HIIT","Sofia",16],["11:30 AM","Mobility & Core","Mobility","Tony",18]]
+};
+const taken={};
+DAYS.forEach((d,di)=>CLASSES[d].forEach((c,i)=>{taken[d+i]=Math.floor(c[4]*0.4)+((i+di)%4)}));
+taken.Mon2=14; // one class is full, to show that state
+const reserved=new Set();
+let day="Mon",type="All";
+function renderSched(){
+ $('days').innerHTML=DAYS.map(d=>`<button class="${d===day?'on':''}" data-d="${d}">${d}</button>`).join('');
+ $('types').innerHTML=TYPES.map(t=>`<button class="${t===type?'on':''}" data-t="${t}">${t}</button>`).join('');
+ const rows=CLASSES[day].map((c,i)=>({c,i})).filter(x=>type==="All"||x.c[2]===type);
+ $('sched').innerHTML=rows.length?rows.map(({c,i})=>{
+  const key=day+i,mine=reserved.has(key),left=c[4]-taken[key]-(mine?1:0);
+  const full=left<=0&&!mine;
+  return `<div class="cls"><div class="time">${c[0]}</div><div><h3>${c[1]}</h3><p>${c[2]} · Coach ${c[3]} · ${full?'Class full':left+' spots left'}</p></div><button data-k="${key}" class="${mine?'on':''}" ${full?'disabled':''}>${mine?'Reserved ✓':full?'Full':'Reserve'}</button></div>`}).join(''):'<div class="empty">No classes of this type on this day.</div>';
+}
+$('days').addEventListener('click',e=>{const b=e.target.closest('button');if(b){day=b.dataset.d;renderSched()}});
+$('types').addEventListener('click',e=>{const b=e.target.closest('button');if(b){type=b.dataset.t;renderSched()}});
+$('sched').addEventListener('click',e=>{const b=e.target.closest('button[data-k]');if(b&&!b.disabled){const k=b.dataset.k;reserved.has(k)?reserved.delete(k):reserved.add(k);renderSched()}});
+
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open')});
+$('form').addEventListener('submit',e=>{
+ e.preventDefault();const m=$('msg');m.style.display='block';
+ const nm=$('tname').value.trim(),ph=$('tphone').value.trim(),em=$('temail').value.trim();
+ if(!nm||!ph||!/^\S+@\S+\.\S+$/.test(em)){m.style.background='#2a1717';m.style.color='#f2b8b0';m.textContent='Please enter your name, phone and a valid email.';return}
+ m.style.background='#16281b';m.style.color='#b9f0cb';
+ m.textContent=`Thanks, ${nm}! This is a demo, so no pass was sent. On a live site the gym would get your details instantly.`;
+ e.target.reset();
+});
+renderPlans();renderSched();
+</script>
+</body>
+</html>

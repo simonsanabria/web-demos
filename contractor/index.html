@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palm Shield Roofing & Remodeling | Free Estimates in Miami</title>
+<meta name="description" content="Palm Shield Roofing & Remodeling: roof repair and replacement, painting and flooring in Miami-Dade. Get a ballpark estimate online and request a free inspection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#10151c;--card:#18202a;--text:#eef1f5;--muted:#9eaab8;--accent:#ffc531;--accent-d:#e6ae18;--steel:#3d6a99;--line:#263140}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Saira Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.03em;line-height:1.08}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:#161616;text-align:center;font-size:.8rem;padding:6px;font-weight:600}
+.alert{background:#1c2733;border-bottom:1px solid var(--line);text-align:center;font-size:.85rem;padding:8px 12px;color:var(--muted)}
+.alert b{color:var(--accent)}
+header{position:sticky;top:0;z-index:10;background:rgba(16,21,28,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:'Saira Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#161616!important;padding:12px 26px;border-radius:4px;font-weight:700;border:0;cursor:pointer;font-size:1rem;text-transform:uppercase;letter-spacing:.05em;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)!important}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+.hero{padding:112px 0 100px;background:radial-gradient(circle at 80% 15%,rgba(255,197,49,.18),transparent 55%),linear-gradient(180deg,#141b24,#10151c)}
+.hero .tag{color:var(--accent);text-transform:uppercase;letter-spacing:.22em;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(2.8rem,8vw,5rem);max-width:780px;margin-bottom:18px}
+.hero .sub{color:var(--muted);max-width:540px;font-size:1.1rem;margin-bottom:30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.trust{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
+.trust .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;text-align:center}
+.trust b{display:block;font-family:'Saira Condensed',sans-serif;font-size:1.7rem;color:var(--accent)}
+.trust span{color:var(--muted);font-size:.85rem}
+section{padding:78px 0}
+.title{text-align:center;margin-bottom:44px}
+.title h2{font-size:2.5rem}
+.title p{color:var(--muted);margin-top:8px}
+.svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px}
+.card .ico{width:44px;height:44px;border-radius:8px;background:rgba(255,197,49,.12);display:grid;place-items:center;font-size:1.4rem;margin-bottom:12px}
+.card h3{font-size:1.35rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.93rem}
+.est{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+input,select,textarea{width:100%;padding:12px 14px;margin-top:4px;background:#10151c;border:1px solid #33425a;border-radius:4px;color:var(--text);font:inherit}
+textarea{min-height:84px;resize:vertical}
+input[type=range]{padding:0;accent-color:var(--accent);background:none;border:0}
+input[type=file]{padding:9px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.range{display:flex;justify-content:space-between;color:var(--text);font-size:.9rem}
+.result{background:#10151c;border:1px solid var(--line);border-radius:8px;padding:24px;text-align:center}
+.result b{display:block;font-family:'Saira Condensed',sans-serif;font-size:2.4rem;color:var(--accent);line-height:1.1;margin:6px 0}
+.result small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+#msg{display:none;padding:14px;border-radius:4px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;position:relative}
+.step::before{counter-increment:s;content:counter(s);font-family:'Saira Condensed',sans-serif;font-size:2.4rem;color:var(--accent);display:block;line-height:1}
+.step h3{font-size:1.25rem;margin:8px 0 4px}
+.step p{color:var(--muted);font-size:.92rem}
+.proj{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.pj{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.pj .img{height:150px;display:grid;place-items:center;font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#fff;font-size:1.1rem}
+.pj .info{padding:14px 18px}
+.pj h3{font-size:1.2rem}
+.pj p{color:var(--muted);font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:8px 18px;color:var(--muted);font-size:.92rem}
+details{border-bottom:1px solid var(--line);padding:16px 0;max-width:760px;margin:0 auto}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:780px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:66px;left:0;right:0;background:#10151c;flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .grid2{grid-template-columns:1fr}
+ .hero{padding:68px 0}
+ section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional business created as a design sample</div>
+<div class="alert"><b>Hurricane season?</b> Ask us about storm-ready roof inspections.</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Palm Shield <span>Roofing</span></a>
+   <button class="burger" id="burger" aria-label="Open menu">☰</button>
+   <div class="links" id="links">
+    <a href="#services">Services</a><a href="#estimate">Estimate</a><a href="#projects">Projects</a><a href="#faq">FAQ</a>
+    <a class="btn" href="#request">Free Inspection</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Roofing · Painting · Flooring · Miami-Dade</p>
+  <h1>Built right. Priced clear. Done on time.</h1>
+  <p class="sub">From a leaking roof to a full refresh, get a ballpark number online in seconds and a written quote after a free inspection.</p>
+  <div class="cta"><a class="btn" href="#estimate">Get a Ballpark Estimate</a><a class="btn ghost" href="#request">Request Inspection</a></div>
+ </div>
+</section>
+
+<div class="trust"><div class="wrap">
+ <div><b>Free</b><span>Written estimates</span></div>
+ <div><b>Photo</b><span>Progress updates</span></div>
+ <div><b>Clear</b><span>Timelines</span></div>
+ <div><b>EN · ES</b><span>Bilingual crew</span></div>
+</div></div>
+
+<section id="services">
+ <div class="wrap">
+  <div class="title"><h2>What We Do</h2><p>Residential and small commercial work across Miami-Dade.</p></div>
+  <div class="svc">
+   <div class="card"><div class="ico">🏠</div><h3>Roof Replacement</h3><p>Tile, shingle and flat roofs installed with proper underlayment and clean-up.</p></div>
+   <div class="card"><div class="ico">🔧</div><h3>Roof Repair</h3><p>Leaks, missing tiles and flashing fixed fast, with photos before and after.</p></div>
+   <div class="card"><div class="ico">🎨</div><h3>Exterior Painting</h3><p>Surface prep, quality paint and a finish that handles Florida sun and rain.</p></div>
+   <div class="card"><div class="ico">🪵</div><h3>Flooring</h3><p>Tile, vinyl plank and laminate for homes and small offices.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="est" id="estimate">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Ballpark Estimate</h2><p>Choose a project and size. The final price comes after a free inspection.</p></div>
+   <form id="calcForm" onsubmit="return false">
+    <label>Project type <select id="ptype"></select></label>
+    <label>Approximate size
+     <div class="range"><span>200 sq ft</span><b id="sizeOut">1,500 sq ft</b><span>5,000 sq ft</span></div>
+     <input type="range" id="size" min="200" max="5000" step="50" value="1500">
+    </label>
+   </form>
+  </div>
+  <div class="result">
+   <span style="color:var(--muted)">Estimated range</span>
+   <b id="range">$0</b>
+   <small id="note"></small>
+   <small>Demo numbers. Real prices depend on materials, access and permits.</small>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <div class="title"><h2>Recent Projects</h2><p>Sample cards. On a live site these show real jobs and photos.</p></div>
+  <div class="proj">
+   <div class="pj"><div class="img" style="background:linear-gradient(135deg,#8c4a2f,#3a1c10)">Tile Roof</div><div class="info"><h3>Tile roof replacement</h3><p>Coral Gables · 3 days</p></div></div>
+   <div class="pj"><div class="img" style="background:linear-gradient(135deg,#3d6a99,#14263a)">Flat Roof</div><div class="info"><h3>Flat roof re-seal</h3><p>Brickell · 2 days</p></div></div>
+   <div class="pj"><div class="img" style="background:linear-gradient(135deg,#7a8f5a,#2c3a1c)">Exterior Paint</div><div class="info"><h3>Exterior repaint</h3><p>Doral · 4 days</p></div></div>
+   <div class="pj"><div class="img" style="background:linear-gradient(135deg,#9a7b4f,#3b2c18)">Flooring</div><div class="info"><h3>Tile flooring install</h3><p>Kendall · 3 days</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section style="background:#121820">
+ <div class="wrap">
+  <div class="title"><h2>How It Works</h2></div>
+  <div class="steps">
+   <div class="step"><h3>Request</h3><p>Tell us about the job and send photos if you have them.</p></div>
+   <div class="step"><h3>Inspect</h3><p>We visit, measure and explain the options in plain language.</p></div>
+   <div class="step"><h3>Quote</h3><p>You get a written quote with scope, price and timeline.</p></div>
+   <div class="step"><h3>Build</h3><p>We do the work, update you with photos and clean up after.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="est" id="request">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Request a Free Inspection</h2><p>We reply the same business day.</p></div>
+   <div class="chips" style="justify-content:flex-start"><span>Brickell</span><span>Coral Gables</span><span>Doral</span><span>Kendall</span><span>Miami Beach</span><span>Hialeah</span></div>
+   <p style="color:var(--muted);margin-top:18px"><b style="color:var(--text)">Demo address</b> · Miami, FL<br><b style="color:var(--text)">Phone</b> · (305) 555-0177</p>
+  </div>
+  <form id="form" novalidate>
+   <div class="two">
+    <label>Name <input type="text" id="cname" autocomplete="name"></label>
+    <label>Phone <input type="tel" id="cphone" autocomplete="tel"></label>
+   </div>
+   <div class="two">
+    <label>Zip code <input type="text" id="czip" inputmode="numeric" maxlength="5" placeholder="33131"></label>
+    <label>Project <select id="cproj"></select></label>
+   </div>
+   <label>Photos (optional) <input type="file" id="cfile" accept="image/*" multiple></label>
+   <label>Details <textarea id="cmsg"></textarea></label>
+   <button class="btn" type="submit">Request Inspection</button>
+   <div id="msg" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <div class="title"><h2>FAQ</h2></div>
+  <details><summary>Is the estimate final?</summary><p>No. The online number is a ballpark. The final written quote comes after an inspection.</p></details>
+  <details><summary>How long does a roof replacement take?</summary><p>Most homes take 2 to 5 days, depending on size, roof type and weather.</p></details>
+  <details><summary>Do you help with permits?</summary><p>Yes. We handle the permit process for the work we do.</p></details>
+  <details><summary>Do you speak Spanish?</summary><p>Sí. Our crew and office speak English and Spanish.</p></details>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Palm Shield Roofing &amp; Remodeling · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#e3a63e;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const TYPES=[
+ {n:"Roof replacement",lo:6,hi:11,note:"Tile, shingle or flat roof, tear-off included."},
+ {n:"Exterior painting",lo:2,hi:4,note:"Pressure wash, prep and two coats."},
+ {n:"Flooring",lo:5,hi:12,note:"Tile or vinyl plank, installed."},
+ {n:"Roof repair",lo:0,hi:0,note:"Repairs are priced per issue after inspection. Typical visits start with a free check."}
+];
+$('ptype').innerHTML=TYPES.map((t,i)=>`<option value="${i}">${t.n}</option>`).join('');
+$('cproj').innerHTML=TYPES.map(t=>`<option>${t.n}</option>`).join('')+'<option>Something else</option>';
+const money=n=>'$'+n.toLocaleString('en-US');
+const round=n=>Math.round(n/100)*100;
+function calc(){
+ const t=TYPES[+$('ptype').value],s=+$('size').value;
+ $('sizeOut').textContent=s.toLocaleString('en-US')+' sq ft';
+ if(!t.hi){$('range').textContent='Free check';$('note').textContent=t.note;return}
+ $('range').textContent=money(round(t.lo*s))+' – '+money(round(t.hi*s));
+ $('note').textContent=t.note;
+}
+$('ptype').addEventListener('change',calc);$('size').addEventListener('input',calc);
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open')});
+$('form').addEventListener('submit',e=>{
+ e.preventDefault();const m=$('msg');m.style.display='block';
+ const nm=$('cname').value.trim(),ph=$('cphone').value.trim(),zp=$('czip').value.trim();
+ if(!nm||!ph||!/^\d{5}$/.test(zp)){m.style.background='#2d1a1a';m.style.color='#f4bcbc';m.textContent='Please enter your name, phone and a 5-digit zip code.';return}
+ m.style.background='#16301f';m.style.color='#bdf2cd';
+ m.textContent=`Thanks, ${nm}! This is a demo, so nothing was sent. On a live site the crew would get your request instantly.`;
+ e.target.reset();
+});
+calc();
+</script>
+</body>
+</html>

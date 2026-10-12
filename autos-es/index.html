@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoPlaza Asunción | Autos usados y seminuevos</title>
+<meta name="description" content="AutoPlaza Asunción: autos usados y seminuevos con garantía. Filtre por marca, tipo y precio, calcule su cuota y consulte por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1116;--card:#171c24;--text:#eef1f5;--muted:#9ba6b5;--accent:#ff4d3d;--accent-d:#e03a2b;--line:#242c38;--wa:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.03em;line-height:1.08}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:#fff;text-align:center;font-size:.8rem;padding:6px;font-weight:600}
+header{position:sticky;top:0;z-index:10;background:rgba(14,17,22,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 24px;border-radius:4px;font-weight:700;border:0;cursor:pointer;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.wa{background:var(--wa);color:#07301a!important}
+.btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)!important}
+.btn.sm{padding:9px 14px;font-size:.8rem}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+.hero{padding:105px 0 90px;background:radial-gradient(circle at 80% 15%,rgba(255,77,61,.22),transparent 55%),linear-gradient(180deg,#121821,#0e1116)}
+.hero .tag{color:var(--accent);text-transform:uppercase;letter-spacing:.22em;font-size:.8rem;font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(2.8rem,8vw,5rem);max-width:760px;margin-bottom:16px}
+.hero .sub{color:var(--muted);max-width:520px;font-size:1.1rem;margin-bottom:28px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:74px 0}
+.title{text-align:center;margin-bottom:36px}
+.title h2{font-size:2.5rem}
+.title p{color:var(--muted);margin-top:8px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:26px}
+label{font-size:.82rem;color:var(--muted)}
+input,select,textarea{width:100%;padding:11px 13px;margin-top:4px;background:#0e1116;border:1px solid #303a49;border-radius:4px;color:var(--text);font:inherit}
+input[type=range]{padding:0;background:none;border:0;accent-color:var(--accent)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.count{color:var(--muted);margin-bottom:14px;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.car{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.car .img{height:150px;display:grid;place-items:center;font-size:3.2rem}
+.car .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.car h3{font-size:1.35rem}
+.car .meta{color:var(--muted);font-size:.85rem}
+.car .price{font-family:'Barlow Condensed',sans-serif;font-size:1.7rem;color:var(--accent);margin:4px 0 8px}
+.car .btn{margin-top:auto;text-align:center}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
+.wa-box{display:none;margin-top:22px;background:#0b140f;border:1px dashed #2f6b45;border-radius:10px;padding:16px;white-space:pre-wrap;color:#cfe9d8;font-size:.9rem}
+.fin{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+form{display:grid;gap:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result{background:#0e1116;border:1px solid var(--line);border-radius:10px;padding:26px;text-align:center}
+.result b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;color:var(--accent);line-height:1.1;margin:6px 0}
+.result small{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+#msg{display:none;padding:14px;border-radius:4px}
+.hours li{list-style:none;display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.hours li b{color:var(--text);font-weight:500}
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:800px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:66px;left:0;right:0;background:#0e1116;flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .grid2{grid-template-columns:1fr}
+ .hero{padding:66px 0}
+ section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Proyecto de demostración: negocio ficticio creado como muestra de diseño</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Auto<span>Plaza</span></a>
+   <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+   <div class="links" id="links">
+    <a href="#stock">Vehículos</a><a href="#financiar">Financiación</a><a href="#contacto">Visítenos</a>
+    <a class="btn" href="#stock">Ver autos</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Usados y seminuevos · Asunción</p>
+  <h1>Encuentre su próximo auto, sin vueltas.</h1>
+  <p class="sub">Vehículos revisados, con documentos al día. Filtre por marca y precio, calcule su cuota y consulte por WhatsApp.</p>
+  <div class="cta"><a class="btn" href="#stock">Ver vehículos</a><a class="btn ghost" href="#financiar">Calcular cuota</a></div>
+ </div>
+</section>
+
+<section id="stock">
+ <div class="wrap">
+  <div class="title"><h2>Vehículos disponibles</h2><p>Ejemplos ficticios. Precios en dólares, como se acostumbra en el mercado.</p></div>
+  <div class="filters">
+   <label>Marca <select id="fbrand"></select></label>
+   <label>Tipo <select id="ftype"></select></label>
+   <label>Precio máximo: <b id="fmaxout"></b><input type="range" id="fmax" min="10000" max="35000" step="500" value="35000"></label>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+  <div class="wa-box" id="wabox"></div>
+ </div>
+</section>
+
+<section class="fin" id="financiar">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Calcule su cuota</h2><p>Una estimación rápida. La cuota final depende de la entidad financiera.</p></div>
+   <form id="calc" onsubmit="return false">
+    <label>Vehículo <select id="cveh"></select></label>
+    <div class="two">
+     <label>Entrega inicial (%) <input type="number" id="centr" value="30" min="0" max="90"></label>
+     <label>Tasa anual (%) <input type="number" id="ctasa" value="12" min="0" step="0.5"></label>
+    </div>
+    <label>Plazo <select id="cplazo"><option value="12">12 meses</option><option value="24">24 meses</option><option value="36" selected>36 meses</option><option value="48">48 meses</option><option value="60">60 meses</option></select></label>
+   </form>
+  </div>
+  <div class="result">
+   <span style="color:var(--muted)">Cuota mensual estimada</span>
+   <b id="cuota">US$ 0</b>
+   <small id="detalle"></small>
+   <small>Cifras de demostración, sin valor de oferta.</small>
+  </div>
+ </div>
+</section>
+
+<section id="contacto">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Agende una visita</h2><p>Le confirmamos por WhatsApp.</p></div>
+   <form id="form" novalidate>
+    <div class="two">
+     <label>Nombre <input type="text" id="vname" autocomplete="name"></label>
+     <label>Teléfono <input type="tel" id="vphone" autocomplete="tel"></label>
+    </div>
+    <label>Vehículo de interés <select id="vveh"></select></label>
+    <label>Comentarios <textarea id="vnote" style="min-height:70px"></textarea></label>
+    <button class="btn" type="submit">Solicitar visita</button>
+    <div id="msg" role="status"></div>
+   </form>
+  </div>
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:14px"><h2>Horarios</h2></div>
+   <ul class="hours">
+    <li><span>Lunes a viernes</span><b>08:00 – 18:00</b></li>
+    <li><span>Sábados</span><b>08:00 – 13:00</b></li>
+    <li><span>Domingos</span><b>Cerrado</b></li>
+   </ul>
+   <p style="color:var(--muted);margin-top:18px"><b style="color:var(--text)">Dirección de ejemplo</b> · Asunción, Paraguay<br><b style="color:var(--text)">WhatsApp</b> · +595 000 000 000 (ejemplo)</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 AutoPlaza Asunción · Sitio de demostración · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Desarrollado por snbr.dev<span style="color:#e3a63e;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const V=[
+ {id:0,m:"Toyota",n:"Hilux 4x4",y:2019,km:78000,t:"Camioneta",p:32500,c:"#3d5a80,#1b2a41",e:"🛻"},
+ {id:1,m:"Toyota",n:"Corolla XEi",y:2020,km:52000,t:"Sedán",p:17800,c:"#6b7a8f,#2b3340",e:"🚗"},
+ {id:2,m:"Kia",n:"Sportage EX",y:2021,km:36000,t:"SUV",p:24900,c:"#7a3b3b,#2f1616",e:"🚙"},
+ {id:3,m:"Hyundai",n:"Creta Limited",y:2022,km:21000,t:"SUV",p:21500,c:"#3b6b5a,#142a22",e:"🚙"},
+ {id:4,m:"Nissan",n:"Frontier Pro",y:2018,km:94000,t:"Camioneta",p:23000,c:"#5a4a3b,#221a13",e:"🛻"},
+ {id:5,m:"Honda",n:"Civic EX",y:2019,km:61000,t:"Sedán",p:18900,c:"#4a4a6b,#1b1b2e",e:"🚗"},
+ {id:6,m:"Chevrolet",n:"Onix LT",y:2022,km:18000,t:"Sedán",p:12900,c:"#6b5a3b,#2a2213",e:"🚗"},
+ {id:7,m:"Ford",n:"Ranger XLT",y:2020,km:67000,t:"Camioneta",p:29900,c:"#3b4f6b,#141c2a",e:"🛻"}
+];
+const usd=n=>'US$ '+Math.round(n).toLocaleString('es-PY');
+const brands=["Todas",...[...new Set(V.map(v=>v.m))]],types=["Todos",...[...new Set(V.map(v=>v.t))]];
+$('fbrand').innerHTML=brands.map(b=>`<option>${b}</option>`).join('');
+$('ftype').innerHTML=types.map(b=>`<option>${b}</option>`).join('');
+const opts=V.map(v=>`<option value="${v.id}">${v.m} ${v.n} ${v.y} · ${usd(v.p)}</option>`).join('');
+$('cveh').innerHTML=opts;$('vveh').innerHTML=opts;
+function render(){
+ const b=$('fbrand').value,t=$('ftype').value,mx=+$('fmax').value;
+ $('fmaxout').textContent=usd(mx);
+ const list=V.filter(v=>(b==="Todas"||v.m===b)&&(t==="Todos"||v.t===t)&&v.p<=mx);
+ $('count').textContent=list.length+(list.length===1?' vehículo encontrado':' vehículos encontrados');
+ $('grid').innerHTML=list.length?list.map(v=>`<article class="car"><div class="img" style="background:linear-gradient(135deg,${v.c})">${v.e}</div><div class="body"><h3>${v.m} ${v.n}</h3><div class="meta">${v.y} · ${v.km.toLocaleString('es-PY')} km · ${v.t}</div><div class="price">${usd(v.p)}</div><button class="btn wa sm" data-id="${v.id}">Consultar por WhatsApp</button></div></article>`).join(''):'<div class="empty">No hay vehículos con esos filtros.</div>';
+}
+['fbrand','ftype','fmax'].forEach(i=>$(i).addEventListener('input',render));
+$('grid').addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(!b)return;const v=V[+b.dataset.id];
+ $('wabox').style.display='block';$('wabox').textContent=`Mensaje listo para WhatsApp (demostración, no se envía):\n\nHola, me interesa el ${v.m} ${v.n} ${v.y} (${usd(v.p)}). ¿Sigue disponible? Quisiera coordinar una visita.`;$('wabox').scrollIntoView({block:'nearest'})});
+function cuota(){
+ const v=V[+$('cveh').value],ent=Math.min(90,Math.max(0,+$('centr').value||0))/100,r=(+$('ctasa').value||0)/100/12,n=+$('cplazo').value;
+ const L=v.p*(1-ent),c=r===0?L/n:L*r/(1-Math.pow(1+r,-n));
+ $('cuota').textContent=usd(c);$('detalle').textContent=`A financiar: ${usd(L)} · Entrega: ${usd(v.p*ent)}`;
+}
+['cveh','centr','ctasa','cplazo'].forEach(i=>$(i).addEventListener('input',cuota));
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open')});
+$('form').addEventListener('submit',e=>{
+ e.preventDefault();const m=$('msg');m.style.display='block';
+ const nm=$('vname').value.trim(),ph=$('vphone').value.trim();
+ if(!nm||!ph){m.style.background='#33191a';m.style.color='#f3bcbc';m.textContent='Complete su nombre y teléfono.';return}
+ m.style.background='#17321f';m.style.color='#bff2cf';
+ m.textContent=`Gracias, ${nm}. Esto es una demostración: no se envió nada. En un sitio real recibiríamos su solicitud al instante.`;
+ e.target.reset();
+});
+render();cuota();
+</script>
+</body>
+</html>

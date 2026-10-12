@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Marina Boutique Hotel | Miami Beach</title>
+<meta name="description" content="Casa Marina Boutique Hotel in Miami Beach: ocean-view rooms, rooftop pool and a short walk to the beach. Check availability and book direct.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e9;--card:#fff;--text:#16323d;--muted:#667a82;--navy:#0f3a4a;--accent:#e0795a;--accent-d:#c76446;--gold:#c9a45c;--line:#e7dfd1}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.15;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--navy);color:#fff;text-align:center;font-size:.8rem;padding:6px}
+header{position:sticky;top:0;z-index:20;background:rgba(246,241,233,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy)}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--navy)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 26px;border-radius:999px;font-weight:600;border:0;cursor:pointer;font-size:.95rem;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.navy{background:var(--navy)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.burger{display:none;background:none;border:0;color:var(--navy);font-size:1.6rem;cursor:pointer}
+.hero{padding:96px 0 120px;background:linear-gradient(180deg,rgba(15,58,74,.88),rgba(15,58,74,.7)),linear-gradient(135deg,#2a7a8f,#0f3a4a);color:#fff}
+.hero .tag{color:#f0d6a0;text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:600;margin-bottom:14px}
+.hero h1{color:#fff;font-size:clamp(2.5rem,7vw,4.6rem);max-width:720px;margin-bottom:14px}
+.hero .sub{color:#d6e6ea;max-width:520px;font-size:1.1rem}
+.search{margin:-64px auto 0;position:relative;z-index:5;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 36px rgba(15,58,74,.15);padding:20px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:14px;align-items:end}
+label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+input,select,textarea{width:100%;padding:11px 13px;margin-top:4px;background:#fff;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit}
+textarea{min-height:70px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+#serr{grid-column:1/-1;color:#b3402a;font-size:.88rem;display:none}
+section{padding:76px 0}
+.title{text-align:center;margin-bottom:34px}
+.title h2{font-size:2.3rem}
+.title p{color:var(--muted);margin-top:8px}
+.rooms{display:grid;gap:18px}
+.room{display:grid;grid-template-columns:240px 1fr auto;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;align-items:stretch}
+.room .img{min-height:170px;display:grid;place-items:center;font-size:3.2rem}
+.room .info{padding:18px 0}
+.room h3{font-size:1.5rem}
+.room p{color:var(--muted);font-size:.92rem;margin:4px 0 8px}
+.room ul{list-style:none;display:flex;gap:8px 16px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+.room .buy{padding:18px 22px;text-align:right;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:190px}
+.room .from{color:var(--muted);font-size:.78rem}
+.room .rate{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--navy);line-height:1}
+.room .tot{font-size:.85rem;color:var(--muted);margin-bottom:8px}
+.room .left{color:var(--accent);font-size:.8rem;font-weight:600}
+.am{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.am div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+.am b{display:block;font-size:1.6rem;margin-bottom:4px}
+.am span{color:var(--muted);font-size:.9rem}
+.modal{position:fixed;inset:0;background:rgba(15,58,74,.55);display:none;place-items:center;z-index:40;padding:16px}
+.modal.on{display:grid}
+.sheet{background:var(--card);border-radius:18px;max-width:480px;width:100%;padding:26px;max-height:92vh;overflow:auto}
+.sheet h3{font-size:1.7rem;margin-bottom:6px}
+.sum{background:var(--bg);border-radius:12px;padding:14px 16px;margin:12px 0;font-size:.92rem}
+.sum div{display:flex;justify-content:space-between;padding:3px 0;color:var(--muted)}
+.sum .t{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;color:var(--navy)}
+.sum .t b{font-family:'DM Serif Display',serif;font-size:1.5rem}
+.sheet label{display:block;margin-top:10px}
+.sheet .row{display:flex;gap:10px;margin-top:16px}
+.sheet .row .btn{flex:1;text-align:center}
+#bmsg{display:none;margin-top:12px;padding:12px;border-radius:10px;font-size:.9rem}
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.map{aspect-ratio:4/3;border-radius:16px;background:linear-gradient(135deg,#bfe0e6,#7fb8c4);display:grid;place-items:center;font-size:3.5rem}
+.loc p{color:var(--muted);margin-top:10px}
+details{border-bottom:1px solid var(--line);padding:16px 0;max-width:720px;margin:0 auto}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+footer{padding:30px 0;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:860px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .search{grid-template-columns:1fr 1fr}
+ .search .btn{grid-column:1/-1}
+ .room{grid-template-columns:1fr}
+ .room .info{padding:0 18px}
+ .room .buy{text-align:left;padding:0 18px 18px}
+ .loc{grid-template-columns:1fr}
+ .hero{padding:64px 0 110px}
+ section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional hotel created as a design sample</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Casa <span>Marina</span></a>
+   <button class="burger" id="burger" aria-label="Open menu">☰</button>
+   <div class="links" id="links">
+    <a href="#rooms">Rooms</a><a href="#amenities">Amenities</a><a href="#location">Location</a><a href="#faq">FAQ</a>
+    <a class="btn" href="#top">Book Direct</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Boutique hotel · Miami Beach</p>
+  <h1>Wake up two blocks from the ocean.</h1>
+  <p class="sub">Ocean-view rooms, a rooftop pool and a short walk to the sand. Book direct for the best rate.</p>
+ </div>
+</section>
+
+<div class="wrap">
+ <form class="search" id="search" onsubmit="return false">
+  <label>Check-in<input type="date" id="cin"></label>
+  <label>Check-out<input type="date" id="cout"></label>
+  <label>Guests<select id="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+  <label>Rooms<select id="nrooms"><option selected>1</option><option>2</option><option>3</option></select></label>
+  <button class="btn" id="check" type="button">Check availability</button>
+  <div id="serr" role="alert"></div>
+ </form>
+</div>
+
+<section id="rooms">
+ <div class="wrap">
+  <div class="title"><h2>Rooms &amp; Suites</h2><p id="roomsSub">Choose your dates to see your total.</p></div>
+  <div class="rooms" id="roomList"></div>
+ </div>
+</section>
+
+<section id="amenities" style="background:#efe7da">
+ <div class="wrap">
+  <div class="title"><h2>Everything You Need</h2></div>
+  <div class="am">
+   <div><b>🏊</b><span>Rooftop pool</span></div>
+   <div><b>🍳</b><span>Breakfast on site</span></div>
+   <div><b>📶</b><span>Fast free Wi-Fi</span></div>
+   <div><b>🏖️</b><span>Beach chairs and towels</span></div>
+   <div><b>🚗</b><span>Valet parking</span></div>
+   <div><b>🛎️</b><span>24-hour front desk</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="location">
+ <div class="wrap loc">
+  <div>
+   <h2>Steps from the beach</h2>
+   <p>Walk to the sand in two minutes, with restaurants, cafés and nightlife around the corner. Airport transfers and tours arranged by our front desk.</p>
+   <p><b>Demo address</b> · Miami Beach, FL · (305) 555-0199</p>
+  </div>
+  <div class="map">🌴</div>
+ </div>
+</section>
+
+<section id="faq" style="background:#efe7da">
+ <div class="wrap">
+  <div class="title"><h2>Good to Know</h2></div>
+  <details><summary>What time are check-in and check-out?</summary><p>Check-in from 3:00 PM and check-out by 11:00 AM. Early and late options on request.</p></details>
+  <details><summary>Can I cancel my booking?</summary><p>Yes. Free cancellation up to 48 hours before arrival.</p></details>
+  <details><summary>Are pets allowed?</summary><p>Small pets are welcome in selected rooms for a fee. Ask us when booking.</p></details>
+  <details><summary>Do you speak Spanish?</summary><p>Sí. Our front desk team speaks English and Spanish.</p></details>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Casa Marina Boutique Hotel · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#e0795a;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Book a room">
+ <div class="sheet">
+  <h3 id="mTitle">Book</h3>
+  <div class="sum" id="mSum"></div>
+  <label>Full name<input type="text" id="gname" autocomplete="name"></label>
+  <label>Email<input type="email" id="gmail" autocomplete="email"></label>
+  <label>Special requests<textarea id="greq"></textarea></label>
+  <div class="row"><button class="btn navy" id="mClose" type="button">Close</button><button class="btn" id="mBook" type="button">Confirm booking</button></div>
+  <div id="bmsg" role="status"></div>
+ </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const ROOMS=[
+ {n:"Standard Queen",d:"Bright city-view room with a queen bed and a work desk.",r:189,cap:2,f:["28 m²","Queen bed","Rain shower"],g:"#9fc7d1,#4f8a9a",e:"🛏️"},
+ {n:"Deluxe Ocean View",d:"Floor-to-ceiling windows and a private balcony facing the sea.",r:259,cap:3,f:["34 m²","King bed","Balcony"],g:"#7fc4d6,#1f6f86",e:"🌊"},
+ {n:"Family Suite",d:"Separate living area, two beds and a kitchenette for longer stays.",r:389,cap:4,f:["52 m²","2 beds","Kitchenette"],g:"#f0cfa0,#c98a4b",e:"🏝️"},
+ {n:"Rooftop Penthouse",d:"Top-floor suite with a terrace, plunge pool and skyline views.",r:649,cap:4,f:["85 m²","King bed","Private terrace"],g:"#e9b9a5,#c0634a",e:"🌇"}
+];
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const TAX=0.13;let cur=null,state=null;
+const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+const today=new Date();$('cin').min=iso(today);$('cout').min=iso(new Date(today.getTime()+864e5));
+function seed(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h}
+function left(i,cin){const v=seed(cin+i)%7;return i===3?(v%2?0:2):(v<1?0:(v<3?2:9))}
+function render(){
+ const g=+$('guests').value,nr=+$('nrooms').value;
+ $('roomList').innerHTML=ROOMS.map((r,i)=>{
+  const fits=r.cap*nr>=g;
+  const lf=state?left(i,state.cin):9;
+  const ok=fits&&lf>0;
+  const sub=state?r.r*state.n*nr:0,total=sub*(1+TAX);
+  return `<article class="room"><div class="img" style="background:linear-gradient(135deg,${r.g})">${r.e}</div><div class="info"><h3>${r.n}</h3><p>${r.d}</p><ul>${r.f.map(x=>`<li>${x}</li>`).join('')}<li>Up to ${r.cap} guests</li></ul></div><div class="buy"><span class="from">From</span><span class="rate">${money(r.r)}<small style="font-size:.8rem;color:var(--muted)"> / night</small></span>${state?`<span class="tot">${state.n} night${state.n>1?'s':''} · ${money(total)} with taxes</span>`:'<span class="tot">&nbsp;</span>'}${state&&ok&&lf<=2?`<span class="left">Only ${lf} left!</span>`:''}<button class="btn" data-i="${i}" ${(!state||!ok)?'disabled':''}>${!state?'Pick dates':(!fits?'Too many guests':(lf===0?'Sold out':'Book this room'))}</button></div></article>`}).join('');
+}
+$('check').onclick=()=>{
+ const a=$('cin').value,b=$('cout').value,e=$('serr');e.style.display='block';
+ if(!a||!b){e.textContent='Please choose check-in and check-out dates.';return}
+ const n=Math.round((new Date(b)-new Date(a))/864e5);
+ if(n<1){e.textContent='Check-out must be after check-in.';return}
+ e.style.display='none';state={cin:a,cout:b,n};
+ $('roomsSub').textContent=`${n} night${n>1?'s':''} · ${a} to ${b} · ${$('guests').value} guest(s)`;
+ render();$('rooms').scrollIntoView({behavior:'smooth'});
+};
+['guests','nrooms'].forEach(i=>$(i).addEventListener('change',render));
+$('roomList').addEventListener('click',e=>{
+ const b=e.target.closest('button[data-i]');if(!b||b.disabled)return;
+ const r=ROOMS[+b.dataset.i],nr=+$('nrooms').value,sub=r.r*state.n*nr,tax=sub*TAX;cur=r;
+ $('mTitle').textContent=r.n;
+ $('mSum').innerHTML=`<div><span>${state.cin} → ${state.cout}</span><span>${state.n} night(s)</span></div><div><span>${money(r.r)} × ${state.n} × ${nr} room(s)</span><span>${money(sub)}</span></div><div><span>Taxes (demo 13%)</span><span>${money(tax)}</span></div><div class="t"><span>Total</span><b>${money(sub+tax)}</b></div>`;
+ $('bmsg').style.display='none';$('modal').classList.add('on');
+});
+$('mClose').onclick=()=>$('modal').classList.remove('on');
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))$('modal').classList.remove('on')});
+$('mBook').onclick=()=>{
+ const nm=$('gname').value.trim(),em=$('gmail').value.trim(),m=$('bmsg');m.style.display='block';
+ if(!nm||!/^\S+@\S+\.\S+$/.test(em)){m.style.background='#fbe3dc';m.style.color='#8a2f1c';m.textContent='Please enter your name and a valid email.';return}
+ m.style.background='#e3f2e6';m.style.color='#1f5a2b';
+ m.textContent=`Thanks, ${nm}! This is a demo, so no reservation was made and nothing was charged.`;
+};
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open')});
+render();
+</script>
+</body>
+</html>

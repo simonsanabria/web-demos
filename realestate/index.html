@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Mendoza | Miami Real Estate Agent</title>
+<meta name="description" content="Carlos Mendoza, bilingual Miami real estate agent. Featured homes, neighborhood guides and a mortgage calculator. English and Español.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f1;--card:#fff;--text:#1b2330;--muted:#5d6675;--navy:#12263f;--accent:#b8924a;--accent-d:#9c7a39;--line:#e4dfd5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--navy);color:#fff;text-align:center;font-size:.8rem;padding:6px}
+header{position:sticky;top:0;z-index:10;background:rgba(247,245,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy)}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--navy)}
+.lang{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;font:inherit;font-size:.85rem;color:var(--navy)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 26px;border-radius:999px;font-weight:600;border:0;cursor:pointer;font-size:1rem;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.dark{background:var(--navy)}
+.burger{display:none;background:none;border:0;color:var(--navy);font-size:1.6rem;cursor:pointer}
+.hero{padding:100px 0 90px;background:linear-gradient(120deg,rgba(18,38,63,.96),rgba(18,38,63,.82)),linear-gradient(135deg,#2c5b86,#12263f);color:#fff}
+.hero .tag{color:#e0c48b;text-transform:uppercase;letter-spacing:.22em;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{color:#fff;font-size:clamp(2.3rem,6vw,3.9rem);max-width:760px;margin-bottom:18px}
+.hero .sub{color:#d3dae4;max-width:540px;font-size:1.1rem;margin-bottom:30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn.ghost{background:transparent;border:1px solid #e0c48b;color:#e0c48b!important}
+section{padding:78px 0}
+.title{text-align:center;margin-bottom:44px}
+.title h2{font-size:2.1rem}
+.title p{color:var(--muted);margin-top:8px}
+.filters{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+.filters button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:8px 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:.92rem}
+.filters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.listings{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.home{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.photo{height:170px;display:grid;place-items:end start;padding:12px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.photo span{background:rgba(18,38,63,.85);padding:4px 10px;border-radius:999px}
+.home .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.home .price{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy)}
+.home .area{color:var(--muted);font-size:.9rem}
+.specs{display:flex;gap:16px;color:var(--text);font-size:.9rem;margin:6px 0 10px}
+.home .btn{margin-top:auto;text-align:center;padding:10px 20px;font-size:.92rem}
+.hoods{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.hood{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.hood h3{font-size:1.15rem;margin-bottom:6px}
+.hood p{color:var(--muted);font-size:.92rem}
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(160deg,#2c5b86,#12263f);display:grid;place-items:center;color:#e0c48b;font-family:'Playfair Display',serif;font-size:5rem}
+.about p{color:var(--muted);margin-top:14px}
+.stats{display:flex;gap:32px;margin-top:24px;flex-wrap:wrap}
+.stats b{display:block;font-size:1.8rem;color:var(--accent);font-family:'Playfair Display',serif}
+.stats span{color:var(--muted);font-size:.85rem}
+.calc{background:var(--navy);color:#fff}
+.calc h2,.calc h3{color:#fff}
+.calc .title p{color:#c4cddb}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+form{display:grid;gap:14px}
+label{font-size:.85rem}
+.calc label{color:#c4cddb}
+.contact label{color:var(--muted)}
+input,select,textarea{width:100%;padding:12px 14px;margin-top:4px;background:#fff;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px;text-align:center}
+.result b{display:block;font-family:'Playfair Display',serif;font-size:2.6rem;color:#e0c48b}
+.result small{color:#c4cddb;display:block;margin-top:6px}
+#msg{display:none;padding:14px;border-radius:10px}
+.contact .info{color:var(--muted);margin-top:18px}
+.contact .info b{color:var(--navy)}
+footer{padding:30px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:780px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:66px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .about,.grid2{grid-template-columns:1fr}
+ .portrait{max-width:260px}
+ .hero{padding:64px 0}
+ section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional agent and listings created as a design sample</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Carlos <span>Mendoza</span></a>
+   <button class="burger" id="burger" aria-label="Open menu">☰</button>
+   <div class="links" id="links">
+    <a href="#homes" data-es="Propiedades">Homes</a>
+    <a href="#areas" data-es="Zonas">Areas</a>
+    <a href="#about" data-es="Sobre mí">About</a>
+    <a href="#calc" data-es="Calculadora">Calculator</a>
+    <button class="lang" id="lang" type="button" aria-label="Switch language">ES</button>
+    <a class="btn" href="#contact" data-es="Contáctame">Contact Me</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag" data-es="Agente inmobiliario bilingüe · Miami">Bilingual real estate agent · Miami</p>
+  <h1 data-es="Encuentra tu hogar en Miami, en tu idioma.">Find your Miami home, in your language.</h1>
+  <p class="sub" data-es="Compra, vende o invierte con acompañamiento personal de principio a fin. Respuestas claras, sin presión.">Buy, sell or invest with personal guidance from start to finish. Clear answers, no pressure.</p>
+  <div class="cta"><a class="btn" href="#homes" data-es="Ver propiedades">View Homes</a><a class="btn ghost" href="#contact" data-es="Hablemos">Let's Talk</a></div>
+ </div>
+</section>
+
+<section id="homes">
+ <div class="wrap">
+  <div class="title"><h2 data-es="Propiedades destacadas">Featured Homes</h2><p data-es="Ejemplos ficticios para mostrar el diseño.">Fictional examples to show the design.</p></div>
+  <div class="filters" id="filters"></div>
+  <div class="listings" id="listings"></div>
+ </div>
+</section>
+
+<section id="areas" style="background:#efece5">
+ <div class="wrap">
+  <div class="title"><h2 data-es="Zonas que conozco bien">Areas I Know Well</h2><p data-es="Cada barrio tiene su estilo de vida.">Every neighborhood has its own lifestyle.</p></div>
+  <div class="hoods">
+   <div class="hood"><h3>Brickell</h3><p data-es="Rascacielos, restaurantes y vida urbana cerca del trabajo.">High-rises, restaurants and city living close to work.</p></div>
+   <div class="hood"><h3>Coral Gables</h3><p data-es="Calles arboladas, buenas escuelas y encanto clásico.">Tree-lined streets, strong schools and classic charm.</p></div>
+   <div class="hood"><h3>Wynwood</h3><p data-es="Arte, cafés y lofts para quienes buscan algo distinto.">Art, cafés and lofts for those who want something different.</p></div>
+   <div class="hood"><h3>Miami Beach</h3><p data-es="Vida frente al mar con alto potencial de alquiler.">Oceanfront living with strong rental potential.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap about">
+  <div class="portrait">CM</div>
+  <div>
+   <h2 data-es="Hola, soy Carlos">Hi, I'm Carlos</h2>
+   <p data-es="Ayudo a familias, profesionales e inversionistas a comprar y vender en Miami. Hablo español e inglés, así que cada detalle del contrato queda claro para ti.">I help families, professionals and investors buy and sell in Miami. I speak English and Spanish, so every detail of the contract is clear to you.</p>
+   <div class="stats">
+    <div><b>120+</b><span data-es="familias atendidas">families served</span></div>
+    <div><b>9</b><span data-es="años de experiencia">years of experience</span></div>
+    <div><b>EN · ES</b><span data-es="atención bilingüe">bilingual service</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="calc" id="calc">
+ <div class="wrap">
+  <div class="title"><h2 data-es="Calculadora de hipoteca">Mortgage Calculator</h2><p data-es="Una estimación rápida de tu pago mensual.">A quick estimate of your monthly payment.</p></div>
+  <div class="grid2">
+   <form id="calcForm" onsubmit="return false">
+    <label><span data-es="Precio de la propiedad ($)">Home price ($)</span><input type="number" id="price" value="500000" min="0" step="1000"></label>
+    <div class="two">
+     <label><span data-es="Pago inicial (%)">Down payment (%)</span><input type="number" id="down" value="20" min="0" max="100" step="1"></label>
+     <label><span data-es="Tasa anual (%)">Interest rate (%)</span><input type="number" id="rate" value="6.5" min="0" step="0.05"></label>
+    </div>
+    <label><span data-es="Plazo">Term</span>
+     <select id="term"><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option></select>
+    </label>
+   </form>
+   <div class="result"><span data-es="Pago mensual estimado">Estimated monthly payment</span><b id="monthly">$0</b><small id="loan"></small><small data-es="Capital e intereses solamente. No incluye impuestos ni seguro.">Principal and interest only. Taxes and insurance not included.</small></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap grid2">
+  <div>
+   <h2 data-es="Hablemos de tu próximo paso">Let's talk about your next move</h2>
+   <p class="info"><b>Demo</b> · Miami, FL<br><b>Phone</b> · (305) 555-0142<br><b>Email</b> · agent@example.com</p>
+  </div>
+  <form id="form" novalidate>
+   <label><span data-es="Nombre">Name</span><input type="text" id="name" autocomplete="name"></label>
+   <div class="two">
+    <label><span data-es="Teléfono">Phone</span><input type="tel" id="phone" autocomplete="tel"></label>
+    <label><span data-es="Quiero">I want to</span><select id="goal"><option value="Buy">Buy</option><option value="Sell">Sell</option><option value="Invest">Invest</option></select></label>
+   </div>
+   <label><span data-es="Mensaje">Message</span><textarea id="message"></textarea></label>
+   <button class="btn dark" type="submit" data-es="Enviar mensaje">Send Message</button>
+   <div id="msg" role="status"></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Carlos Mendoza Real Estate · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#b8924a;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const HOMES=[
+ {n:"Skyline Condo",a:"Brickell",t:"Condo",p:485000,b:2,ba:2,s:1180,c:"#2c5b86,#12263f"},
+ {n:"Garden Villa",a:"Coral Gables",t:"House",p:1150000,b:4,ba:3,s:2900,c:"#4a7c59,#1d3b2a"},
+ {n:"Art District Loft",a:"Wynwood",t:"Condo",p:620000,b:1,ba:2,s:1050,c:"#8a4f7d,#3a1f35"},
+ {n:"Oceanview Residence",a:"Miami Beach",t:"Condo",p:895000,b:2,ba:2,s:1420,c:"#2a8ca3,#0f3b4a"},
+ {n:"Family Home",a:"Coral Gables",t:"House",p:965000,b:3,ba:2,s:2200,c:"#b8744a,#5a2f17"},
+ {n:"Bay Penthouse",a:"Brickell",t:"Condo",p:1480000,b:3,ba:3,s:2350,c:"#6b5b95,#2b2347"}
+];
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+const list=document.getElementById('listings'),fl=document.getElementById('filters');
+const types=["All","House","Condo"];let cur="All";
+function render(){
+ fl.innerHTML=types.map(t=>`<button class="${t===cur?'on':''}" data-t="${t}">${t==='All'&&es?'Todas':t==='House'&&es?'Casas':t==='Condo'&&es?'Condominios':t}</button>`).join('');
+ list.innerHTML=HOMES.filter(h=>cur==="All"||h.t===cur).map(h=>`<article class="home"><div class="photo" style="background:linear-gradient(135deg,${h.c})"><span>${h.a}</span></div><div class="body"><div class="price">${fmt(h.p)}</div><h3>${h.n}</h3><div class="area">${h.t} · ${h.a}, Miami</div><div class="specs"><span>${h.b} ${es?'hab.':'bd'}</span><span>${h.ba} ${es?'baños':'ba'}</span><span>${h.s.toLocaleString('en-US')} sqft</span></div><a class="btn" href="#contact" data-ask="${h.n}">${es?'Pedir información':'Request Details'}</a></div></article>`).join('');
+}
+fl.addEventListener('click',e=>{const b=e.target.closest('button');if(b){cur=b.dataset.t;render()}});
+list.addEventListener('click',e=>{const a=e.target.closest('[data-ask]');if(a){document.getElementById('message').value=(es?'Me interesa: ':"I'm interested in: ")+a.dataset.ask}});
+function calc(){
+ const P=+price.value||0,d=Math.min(100,Math.max(0,+down.value||0)),r=(+rate.value||0)/100/12,n=(+term.value)*12;
+ const L=P*(1-d/100);
+ const m=r===0?L/n:L*r/(1-Math.pow(1+r,-n));
+ monthly.textContent=fmt(m);
+ loan.textContent=(es?'Préstamo: ':'Loan amount: ')+fmt(L);
+}
+['price','down','rate','term'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+links.addEventListener('click',e=>{if(e.target.tagName==='A')links.classList.remove('open')});
+let es=false;
+const T=[...document.querySelectorAll('[data-es]')];T.forEach(e=>e.dataset.en=e.textContent);
+lang.onclick=()=>{es=!es;document.documentElement.lang=es?'es':'en';T.forEach(e=>e.textContent=es?e.dataset.es:e.dataset.en);lang.textContent=es?'EN':'ES';render();calc()};
+const msg=document.getElementById('msg');
+document.getElementById('form').addEventListener('submit',e=>{
+ e.preventDefault();msg.style.display='block';
+ const nm=document.getElementById('name'),ph=document.getElementById('phone');
+ if(!nm.value.trim()||!ph.value.trim()){msg.style.background='#fbe9e7';msg.style.color='#8a2c1d';msg.textContent=es?'Completa tu nombre y teléfono.':'Please enter your name and phone.';return}
+ msg.style.background='#e6f2e8';msg.style.color='#1f5a2b';
+ msg.textContent=es?`Gracias, ${nm.value.trim()}. Esto es una demo: no se envió nada.`:`Thanks, ${nm.value.trim()}! This is a demo, so nothing was sent.`;
+ e.target.reset();
+});
+render();calc();
+</script>
+</body>
+</html>

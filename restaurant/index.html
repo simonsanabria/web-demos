@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember & Salt Kitchen | Wood-Fired Restaurant</title>
+<meta name="description" content="Ember & Salt Kitchen: wood-fired dishes, seasonal ingredients and a warm table waiting for you. Reserve online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14100e;--card:#1e1814;--text:#f3ebe2;--muted:#b9aca0;--accent:#e2753a;--accent-d:#c85f28}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(20,16,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid #2b231d}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:28px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 24px;border-radius:999px;font-weight:600;border:0;cursor:pointer;font-size:1rem;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+.hero{padding:110px 0 100px;background:radial-gradient(circle at 75% 20%,rgba(226,117,58,.28),transparent 55%),linear-gradient(180deg,#1a1411,#14100e)}
+.hero p.tag{color:var(--accent);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);max-width:720px;margin-bottom:20px}
+.hero p.sub{color:var(--muted);max-width:520px;font-size:1.1rem;margin-bottom:32px}
+section{padding:80px 0}
+.title{text-align:center;margin-bottom:48px}
+.title h2{font-size:2.2rem}
+.title p{color:var(--muted);margin-top:8px}
+.tabs{display:flex;gap:10px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.tabs button{background:var(--card);color:var(--muted);border:1px solid #33291f;padding:9px 20px;border-radius:999px;cursor:pointer;font-size:.95rem}
+.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.item{background:var(--card);border:1px solid #2b231d;border-radius:14px;padding:22px}
+.item .row{display:flex;justify-content:space-between;gap:12px;margin-bottom:6px}
+.item h3{font-size:1.15rem}
+.item .price{color:var(--accent);font-weight:600}
+.item p{color:var(--muted);font-size:.93rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about .pic{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(135deg,#e2753a,#7a2e12 60%,#2a1209);display:grid;place-items:center;font-size:5rem}
+.about p{color:var(--muted);margin-top:14px}
+.stats{display:flex;gap:36px;margin-top:26px}
+.stats b{display:block;font-size:1.8rem;color:var(--accent);font-family:'Playfair Display',serif}
+.stats span{color:var(--muted);font-size:.85rem}
+.book{background:var(--card);border-top:1px solid #2b231d;border-bottom:1px solid #2b231d}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+input,select{width:100%;padding:12px 14px;margin-top:4px;background:#120e0c;border:1px solid #3a2e24;border-radius:10px;color:var(--text);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#msg{display:none;background:#1f3a22;border:1px solid #2e6a35;padding:14px;border-radius:10px;color:#bfe8c4}
+.hours li{list-style:none;display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #33291f;color:var(--muted)}
+.hours li b{color:var(--text);font-weight:500}
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+.demo{background:var(--accent);color:#fff;text-align:center;font-size:.8rem;padding:6px}
+@media(max-width:780px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:64px;left:0;right:0;background:#14100e;flex-direction:column;padding:20px;border-bottom:1px solid #2b231d;gap:18px}
+ .links.open{display:flex}
+ .about,.grid2{grid-template-columns:1fr}
+ .hero{padding:70px 0}
+ section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional business created as a design sample</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Ember <span>&</span> Salt</a>
+   <button class="burger" id="burger" aria-label="Open menu">☰</button>
+   <div class="links" id="links">
+    <a href="#menu">Menu</a><a href="#about">Our Story</a><a href="#visit">Visit</a>
+    <a class="btn" href="#book">Reserve a Table</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Wood-fired kitchen · Seasonal menu</p>
+  <h1>Fire, salt and everything worth sharing.</h1>
+  <p class="sub">Local ingredients, slow flames and a table that feels like home. Come hungry, leave happy.</p>
+  <a class="btn" href="#book">Reserve a Table</a>
+ </div>
+</section>
+
+<section id="menu">
+ <div class="wrap">
+  <div class="title"><h2>Our Menu</h2><p>Cooked over open flame, made fresh every day.</p></div>
+  <div class="tabs" id="tabs">
+   <button class="on" data-c="starters">Starters</button>
+   <button data-c="mains">Mains</button>
+   <button data-c="desserts">Desserts</button>
+  </div>
+  <div class="menu" id="menuGrid"></div>
+ </div>
+</section>
+
+<section id="about" style="background:var(--card)">
+ <div class="wrap about">
+  <div class="pic" aria-hidden="true">🔥</div>
+  <div>
+   <h2>A family kitchen with a big fire</h2>
+   <p>We started with one oven and one idea: simple food, cooked well, shared at a big table. Today we still buy from the same local farms and still light the fire every morning.</p>
+   <div class="stats">
+    <div><b>12</b><span>Local farms</span></div>
+    <div><b>100%</b><span>Fresh daily</span></div>
+    <div><b>4.9★</b><span>Guest rating</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="book" class="book">
+ <div class="wrap grid2">
+  <div>
+   <h2 style="margin-bottom:12px">Reserve your table</h2>
+   <p style="color:var(--muted);margin-bottom:24px">Tell us when you're coming and we'll save you a seat.</p>
+   <form id="form" novalidate>
+    <label>Full name<input id="name" required placeholder="Jane Smith"></label>
+    <div class="two">
+     <label>Date<input id="date" type="date" required></label>
+     <label>Time<select id="time"><option>5:00 PM</option><option>6:00 PM</option><option selected>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option></select></label>
+    </div>
+    <label>Guests<select id="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></label>
+    <button class="btn" type="submit">Request Reservation</button>
+    <div id="msg" role="status"></div>
+   </form>
+  </div>
+  <div id="visit">
+   <h2 style="margin-bottom:12px">Visit us</h2>
+   <p style="color:var(--muted);margin-bottom:20px">128 Maple Street, Downtown<br>(555) 014-2290 · hello@embersalt.example</p>
+   <ul class="hours">
+    <li><b>Tuesday – Thursday</b><span>5 PM – 10 PM</span></li>
+    <li><b>Friday – Saturday</b><span>5 PM – 11 PM</span></li>
+    <li><b>Sunday</b><span>4 PM – 9 PM</span></li>
+    <li><b>Monday</b><span>Closed</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Ember & Salt Kitchen · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#e3a63e;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const data={
+ starters:[["Charred Bread & Whipped Butter","6","Sourdough from the wood oven, honey, sea salt."],["Smoked Beet Salad","11","Goat cheese, walnuts, citrus vinaigrette."],["Grilled Octopus","16","Crispy potatoes, paprika oil, lemon."]],
+ mains:[["Wood-Fired Ribeye","34","300g, roasted garlic, chimichurri."],["Whole Roasted Trout","26","Herbs, fennel, brown butter."],["Mushroom Risotto","21","Wild mushrooms, parmesan, thyme. Vegetarian."]],
+ desserts:[["Burnt Honey Cheesecake","9","Seasonal berries, toasted almonds."],["Dark Chocolate Pot","8","Sea salt, olive oil, cream."],["Fire-Roasted Peaches","9","Vanilla ice cream, crumble."]]
+};
+const grid=document.getElementById('menuGrid');
+function show(c){
+ grid.innerHTML=data[c].map(i=>`<article class="item"><div class="row"><h3>${i[0]}</h3><span class="price">$${i[1]}</span></div><p>${i[2]}</p></article>`).join('');
+}
+document.getElementById('tabs').addEventListener('click',e=>{
+ if(e.target.tagName!=='BUTTON')return;
+ document.querySelectorAll('#tabs button').forEach(b=>b.classList.remove('on'));
+ e.target.classList.add('on');show(e.target.dataset.c);
+});
+show('starters');
+const burger=document.getElementById('burger'),links=document.getElementById('links');
+burger.onclick=()=>links.classList.toggle('open');
+links.addEventListener('click',e=>{if(e.target.tagName==='A')links.classList.remove('open')});
+const date=document.getElementById('date');
+date.min=new Date().toISOString().split('T')[0];
+document.getElementById('form').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=document.getElementById('name').value.trim(),d=date.value,m=document.getElementById('msg');
+ m.style.display='block';
+ if(!n||!d){m.style.cssText='display:block;background:#3a1f1f;border:1px solid #6a2e2e;color:#f0bcbc';m.textContent='Please enter your name and a date.';return}
+ m.style.cssText='display:block';
+ m.textContent=`Thank you, ${n}! We received your request for ${document.getElementById('guests').value} on ${d} at ${document.getElementById('time').value}. We'll confirm shortly.`;
+ e.target.reset();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Auto Detailing | Mobile Detailing & Ceramic Coating in Miami</title>
+<meta name="description" content="Apex Auto Detailing: mobile car detailing and ceramic coating across Miami-Dade. Instant price estimate and online booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d10;--card:#14181d;--text:#eef1f4;--muted:#9aa4af;--accent:#2da7ff;--accent-d:#1b8ad9;--line:#232932}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:#04121c;text-align:center;font-size:.8rem;padding:6px;font-weight:600}
+header{position:sticky;top:0;z-index:10;background:rgba(11,13,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:#04121c!important;padding:12px 26px;border-radius:4px;font-weight:700;border:0;cursor:pointer;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)!important}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+.hero{padding:120px 0 105px;background:radial-gradient(circle at 78% 18%,rgba(45,167,255,.25),transparent 55%),linear-gradient(180deg,#10141a,#0b0d10)}
+.hero .tag{color:var(--accent);text-transform:uppercase;letter-spacing:.25em;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(2.8rem,8vw,5rem);max-width:780px;margin-bottom:20px}
+.hero .sub{color:var(--muted);max-width:520px;font-size:1.1rem;margin-bottom:32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:78px 0}
+.title{text-align:center;margin-bottom:44px}
+.title h2{font-size:2.4rem}
+.title p{color:var(--muted);margin-top:8px}
+.sizes{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+.sizes button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:9px 22px;border-radius:999px;cursor:pointer;font:inherit;font-size:.95rem}
+.sizes button.on{background:var(--accent);color:#04121c;border-color:var(--accent);font-weight:600}
+.pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.pkg{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.pkg.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.pkg .badge{align-self:flex-start;background:var(--accent);color:#04121c;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.pkg h3{font-size:1.4rem}
+.pkg .price{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;color:var(--accent)}
+.pkg ul{list-style:none;color:var(--muted);font-size:.92rem;display:grid;gap:6px;margin:6px 0 10px}
+.pkg li::before{content:"✓ ";color:var(--accent)}
+.pkg .btn{margin-top:auto;text-align:center;padding:10px 18px;font-size:.9rem}
+.ba{max-width:760px;margin:0 auto}
+.stage{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--line);user-select:none}
+.stage .layer{position:absolute;inset:0;display:grid;place-items:center;font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);text-transform:uppercase;letter-spacing:.1em}
+.before{background:repeating-linear-gradient(45deg,#3a352b,#3a352b 12px,#403a2f 12px,#403a2f 24px);color:#cfc7b4}
+.after{background:linear-gradient(135deg,#0d2a3f,#2da7ff 55%,#bfe6ff);color:#fff;clip-path:inset(0 50% 0 0)}
+.stage .tagl{position:absolute;top:12px;font-size:.75rem;font-weight:700;letter-spacing:.12em;background:rgba(0,0,0,.6);padding:4px 10px;border-radius:999px}
+.stage .l{left:12px}.stage .r{right:12px}
+.handle{position:absolute;top:0;bottom:0;width:3px;background:#fff;left:50%;transform:translateX(-50%);pointer-events:none}
+#slider{width:100%;margin-top:14px;accent-color:var(--accent)}
+.note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:8px}
+.area{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:8px 18px;color:var(--muted);font-size:.92rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+input,select{width:100%;padding:12px 14px;margin-top:4px;background:#0b0d10;border:1px solid #2f3742;border-radius:4px;color:var(--text);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.addons{display:grid;gap:8px}
+.addons label{display:flex;align-items:center;gap:10px;color:var(--text);font-size:.92rem;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:10px 12px;cursor:pointer}
+.addons input{width:auto;margin:0;accent-color:var(--accent)}
+.addons em{margin-left:auto;font-style:normal;color:var(--accent)}
+.total{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;align-items:baseline}
+.total b{font-family:'Barlow Condensed',sans-serif;font-size:2rem;color:var(--accent)}
+#msg{display:none;padding:14px;border-radius:4px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:780px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:64px;left:0;right:0;background:#0b0d10;flex-direction:column;padding:20px;border-bottom:1px solid var(--line);gap:18px}
+ .links.open{display:flex}
+ .grid2{grid-template-columns:1fr}
+ .hero{padding:70px 0}
+ section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo project: fictional business created as a design sample</div>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#top">Apex <span>Detailing</span></a>
+   <button class="burger" id="burger" aria-label="Open menu">☰</button>
+   <div class="links" id="links">
+    <a href="#packages">Packages</a><a href="#results">Results</a><a href="#faq">FAQ</a>
+    <a class="btn" href="#book">Book &amp; Get a Quote</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <p class="tag">Mobile detailing · Miami-Dade</p>
+  <h1>Showroom shine. At your driveway.</h1>
+  <p class="sub">We come to your home or office with everything we need. Interior, exterior and ceramic coating done right, with a price you see before you book.</p>
+  <div class="cta"><a class="btn" href="#book">Get My Price</a><a class="btn ghost" href="#packages">See Packages</a></div>
+ </div>
+</section>
+
+<section id="packages">
+ <div class="wrap">
+  <div class="title"><h2>Packages &amp; Pricing</h2><p>Pick your vehicle size to see your price.</p></div>
+  <div class="sizes" id="sizes"></div>
+  <div class="pkgs" id="pkgs"></div>
+ </div>
+</section>
+
+<section id="results" style="background:#0f1216">
+ <div class="wrap">
+  <div class="title"><h2>Before &amp; After</h2><p>Drag the slider to see the difference.</p></div>
+  <div class="ba">
+   <div class="stage" id="stage">
+    <div class="layer before">Before</div>
+    <div class="layer after" id="after">After</div>
+    <span class="tagl l">BEFORE</span><span class="tagl r">AFTER</span>
+    <div class="handle" id="handle"></div>
+   </div>
+   <input type="range" id="slider" min="0" max="100" value="50" aria-label="Before and after slider">
+   <p class="note">Sample graphic. On your live site, use real photos of your work.</p>
+  </div>
+ </div>
+</section>
+
+<section class="area">
+ <div class="wrap">
+  <div class="title"><h2>Where We Come To You</h2><p>Mobile service across Miami-Dade.</p></div>
+  <div class="chips"><span>Brickell</span><span>Coral Gables</span><span>Miami Beach</span><span>Doral</span><span>Wynwood</span><span>Aventura</span><span>Kendall</span><span>Coconut Grove</span></div>
+ </div>
+</section>
+
+<section id="book">
+ <div class="wrap grid2">
+  <div>
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>Book &amp; Get a Quote</h2><p>Your estimate updates as you choose.</p></div>
+   <form id="form" novalidate>
+    <div class="two">
+     <label>Vehicle size <select id="size"><option value="0">Sedan / Coupe</option><option value="1">SUV</option><option value="2">Truck / Van</option></select></label>
+     <label>Package <select id="pkg"></select></label>
+    </div>
+    <div class="addons" id="addons"></div>
+    <div class="total"><span>Estimated total</span><b id="total">$0</b></div>
+    <div class="two">
+     <label>Date <input type="date" id="date"></label>
+     <label>Zip code <input type="text" id="zip" inputmode="numeric" maxlength="5" placeholder="33131"></label>
+    </div>
+    <div class="two">
+     <label>Name <input type="text" id="cname" autocomplete="name"></label>
+     <label>Phone <input type="tel" id="cphone" autocomplete="tel"></label>
+    </div>
+    <button class="btn" type="submit">Request Booking</button>
+    <div id="msg" role="status"></div>
+   </form>
+  </div>
+  <div id="faq">
+   <div class="title" style="text-align:left;margin-bottom:12px"><h2>FAQ</h2></div>
+   <details><summary>Do I need to provide water or power?</summary><p>No. Our mobile unit carries its own water and power, so we only need a spot to park.</p></details>
+   <details><summary>How long does a full detail take?</summary><p>Usually 3 to 4 hours, depending on vehicle size and condition.</p></details>
+   <details><summary>How long does ceramic coating last?</summary><p>Our coating is rated for about one year with regular maintenance washes.</p></details>
+   <details><summary>What if it rains?</summary><p>We reschedule at no charge. Miami weather changes fast, so we always check the forecast.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Apex Auto Detailing · Demo website · <a href="https://www.snbr.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Built by snbr.dev<span style="color:#2da7ff;animation:snbrblink 1s steps(1) infinite">_</span></a><style>@keyframes snbrblink{50%{opacity:0}}</style></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const SIZES=["Sedan","SUV","Truck / Van"];
+const PKGS=[
+ {n:"Express Wash",p:[59,69,79],f:["Hand wash and dry","Wheels and tires","Windows inside and out"]},
+ {n:"Interior Detail",p:[149,179,199],f:["Vacuum and steam clean","Leather / fabric care","Dashboard and vents"]},
+ {n:"Full Detail",p:[229,269,299],f:["Everything in Express + Interior","Clay bar and wax","Tire shine"],best:true},
+ {n:"Ceramic Coating",p:[499,599,699],f:["Paint decontamination","1-year ceramic coating","Gloss and water repellency"]}
+];
+const ADDONS=[["Engine bay clean",40],["Headlight restoration",60],["Pet hair removal",50],["Odor removal",45]];
+let sz=0;
+const money=n=>'$'+n.toLocaleString('en-US');
+function renderPkgs(){
+ $('sizes').innerHTML=SIZES.map((s,i)=>`<button class="${i===sz?'on':''}" data-i="${i}">${s}</button>`).join('');
+ $('pkgs').innerHTML=PKGS.map((k,i)=>`<div class="pkg ${k.best?'best':''}">${k.best?'<span class="badge">Most popular</span>':''}<h3>${k.n}</h3><div class="price">${money(k.p[sz])}</div><ul>${k.f.map(x=>`<li>${x}</li>`).join('')}</ul><a class="btn" href="#book" data-pick="${i}">Choose</a></div>`).join('');
+}
+$('sizes').addEventListener('click',e=>{const b=e.target.closest('button');if(b){sz=+b.dataset.i;$('size').value=sz;renderPkgs();total()}});
+$('pkgs').addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(a){$('pkg').value=a.dataset.pick;total()}});
+$('pkg').innerHTML=PKGS.map((k,i)=>`<option value="${i}">${k.n}</option>`).join('');
+$('addons').innerHTML=ADDONS.map(([n,p],i)=>`<label><input type="checkbox" data-a="${i}"> ${n}<em>+${money(p)}</em></label>`).join('');
+function total(){
+ const s=+$('size').value,k=+$('pkg').value;
+ let t=PKGS[k].p[s];
+ document.querySelectorAll('#addons input:checked').forEach(c=>t+=ADDONS[+c.dataset.a][1]);
+ $('total').textContent=money(t);
+ return t;
+}
+$('size').addEventListener('change',()=>{sz=+$('size').value;renderPkgs();total()});
+$('pkg').addEventListener('change',total);
+$('addons').addEventListener('change',total);
+$('slider').addEventListener('input',e=>{const v=e.target.value;$('after').style.clipPath=`inset(0 ${100-v}% 0 0)`;$('handle').style.left=v+'%'});
+const d=new Date();$('date').min=new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open')});
+$('form').addEventListener('submit',e=>{
+ e.preventDefault();const m=$('msg');m.style.display='block';
+ const need=['date','zip','cname','cphone'].find(id=>!$(id).value.trim());
+ if(need||!/^\d{5}$/.test($('zip').value.trim())){m.style.background='#2a1a1a';m.style.color='#f0b9b9';m.textContent='Please complete date, a 5-digit zip code, name and phone.';return}
+ m.style.background='#12281a';m.style.color='#b9f0cb';
+ m.textContent=`Thanks, ${$('cname').value.trim()}! Estimated ${money(total())}. This is a demo, so nothing was sent.`;
+ e.target.reset();sz=0;renderPkgs();total();
+});
+renderPkgs();total();
+</script>
+</body>
+</html>
